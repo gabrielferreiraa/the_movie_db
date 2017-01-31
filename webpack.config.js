@@ -30,7 +30,7 @@ module.exports = validate({
     new DashboardPlugin(),
 
     new htmlPlugin({
-      title: 'GitHub App',
+      title: 'POC React',
       template: path.join(__dirname, 'src', 'template.html')
     })
   ],

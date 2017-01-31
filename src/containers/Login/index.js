@@ -5,13 +5,12 @@ import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import styles from './login.css';
-import '../style-default.css';
+import 'src/style-default.css';
 
-const LoginPage = () => {
+const Login = () => {
   return (
     <MuiThemeProvider>
       <div className={styles.loginContainer}>
-        <img src='http://www.ilheus24h.com.br/v1/wp-content/uploads/2013/10/logo_pt.gif' />
         <Paper zDepth={1} className={styles.paper}>
           <TextField
             hintText='admin'
@@ -24,7 +23,7 @@ const LoginPage = () => {
           />
           <div>
             <Link to='/dashboard'>
-              <RaisedButton label="Entrar" primary={true} />
+              <RaisedButton label='Entrar' primary={true} />
             </Link>
           </div>
         </Paper>
@@ -33,4 +32,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;
