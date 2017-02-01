@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import { grey800, white } from 'material-ui/styles/colors';
+import { white } from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import AppBar from 'material-ui/AppBar';
 import Menu from 'material-ui/svg-icons/navigation/menu';
@@ -11,7 +11,7 @@ class Header extends Component {
 
     const bgApp = {
       bg: {
-        backgroundColor: grey800,
+        backgroundColor: '#333',
         fontFamily: 'Roboto',
         position: 'fixed',
         top: 0,
@@ -21,6 +21,9 @@ class Header extends Component {
         backgroundColor: '#E76049',
         color: '#fff',
         marginRight: drawerOpen ? 255 : 2.5
+      },
+      icon: {
+        transform: drawerOpen ? 'rotate(90deg)' : 'rotate(0)'
       }
     };
 
@@ -28,8 +31,11 @@ class Header extends Component {
       <AppBar
         style={{ ...styles, ...bgApp.bg }}
         iconElementLeft={
-          <IconButton onClick={handleChangeDrawer}>
-            <Menu color={white}/>
+          <IconButton
+            style={bgApp.icon}
+            onClick={handleChangeDrawer}
+          >
+            <Menu color={white} />
           </IconButton>
         }
         iconElementRight={
