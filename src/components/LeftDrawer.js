@@ -9,21 +9,31 @@ class LeftDrawer extends Component {
     const style = {
       bg: {
         backgroundColor: '#333'
+      },
+      user: {
+        textAlign: 'center',
+        fontFamily: 'Roboto'
+      },
+      link: {
+        textDecoration: 'none'
       }
     };
 
     return (
-      <Drawer open={this.props.open} style={style.bg}>
+      <Drawer
+        docked={true}
+        open={this.props.open}
+        style={style.bg}>
         <div>
-          <h4>Markup</h4>
+          <h4 style={style.user}>Usuário Online</h4>
         </div>
         <div>
           {this.props.menus.map((menu, index) =>
-            <Link to={menu.link} key={menu.id}>
+            <Link to={menu.link} key={menu.id} style={style.link}>
               <MenuItem
                 primaryText={menu.text}
                 leftIcon={
-                  <i className='material-icons' style={{color: '#89949B'}}>{menu.icon}</i>
+                  <i className='material-icons' style={{ color: '#89949B' }}>{menu.icon}</i>
                 }
               />
             </Link>
@@ -31,15 +41,21 @@ class LeftDrawer extends Component {
           <MenuItem
             primaryText='Configurações'
             rightIcon={<ArrowDropRight />}
-            leftIcon={<i className='material-icons' style={{color: '#89949B'}}>settings</i>}
+            leftIcon={<i className='material-icons' style={{ color: '#89949B' }}>settings</i>}
             menuItems={[
-              <MenuItem primaryText='Menu 1' rightIcon={<i className='material-icons' style={{color: '#89949B'}}>room</i>} />,
-              <MenuItem primaryText='Menu 2' rightIcon={<i className='material-icons' style={{color: '#89949B'}}>account_circle</i>} />,
-              <MenuItem primaryText='Menu 3' rightIcon={<i className='material-icons' style={{color: '#89949B'}}>build</i>} />,
+              <MenuItem
+                primaryText='Menu 1'
+                rightIcon={<i className='material-icons' style={{ color: '#89949B' }}>room</i>} />,
+              <MenuItem
+                primaryText='Menu 2'
+                rightIcon={<i className='material-icons' style={{ color: '#89949B' }}>account_circle</i>} />,
+              <MenuItem
+                primaryText='Menu 3'
+                rightIcon={<i className='material-icons' style={{ color: '#89949B' }}>build</i>} />
             ]}
           />
-      </div>
-    </Drawer>
+        </div>
+      </Drawer>
     );
   }
 }

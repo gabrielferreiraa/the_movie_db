@@ -26,20 +26,21 @@ class App extends Component {
 
     const styles = {
       header: {
-        marginLeft: drawerOpen ? marginLeft : -10
+        marginLeft: drawerOpen ? marginLeft : -5
       },
       container: {
         margin: '80px 20px 20px 15px',
-        paddingLeft: drawerOpen ? marginLeft : 25
+        paddingLeft: drawerOpen ? marginLeft : 25,
+        transition: 'all 200ms ease'
       }
     };
     const currentRoute = this.props.location.pathname;
-    
+
     return (
       <MuiThemeProvider>
         <div>
-          <Header handleChangeDrawer={this.handleChangeDrawer} styles={styles.header} />
-          <LeftDrawer open={drawerOpen} menus={Data.menus} currentRoute={currentRoute}/>
+          <Header handleChangeDrawer={this.handleChangeDrawer} styles={styles.header} drawerOpen={drawerOpen} />
+          <LeftDrawer open={drawerOpen} menus={Data.menus} currentRoute={currentRoute} />
           <div style={styles.container}>
             {this.props.children}
           </div>

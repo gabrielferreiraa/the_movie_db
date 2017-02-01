@@ -3,13 +3,12 @@ import { Link } from 'react-router';
 import { grey800, white } from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import AppBar from 'material-ui/AppBar';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import Menu from 'material-ui/svg-icons/navigation/menu';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
 
 class Header extends Component {
   render () {
+    const { styles, handleChangeDrawer, drawerOpen } = this.props;
+
     const bgApp = {
       bg: {
         backgroundColor: grey800,
@@ -17,33 +16,32 @@ class Header extends Component {
         position: 'fixed',
         top: 0,
         overflow: 'hidden'
+      },
+      bt: {
+        backgroundColor: '#E76049',
+        color: '#fff',
+        marginRight: drawerOpen ? 255 : 2.5
       }
     };
 
-    const { styles, handleChangeDrawer } = this.props;
-
     return (
       <AppBar
-        style={{...styles, ...bgApp.bg}}
+        style={{ ...styles, ...bgApp.bg }}
         iconElementLeft={
           <IconButton onClick={handleChangeDrawer}>
-            <Menu color={white} />
+            <Menu color={white}/>
           </IconButton>
         }
         iconElementRight={
-          <IconMenu
-            iconButtonElement={
-              <IconButton><MoreVertIcon /></IconButton>
-            }
-            targetOrigin={{horizontal: 'right', vertical: 'top'}}
-            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-          >
           <Link to='/login'>
-            <MenuItem primaryText='Sair' rightIcon={<i className='material-icons' style={{color: '#89949B'}}>exit_to_app</i>} />
+            <IconButton
+              style={bgApp.bt}
+            >
+              <i className='material-icons' style={{ color: '#89949B' }}>exit_to_app</i>
+            </IconButton>
           </Link>
-          </IconMenu>
         }
-        title='Painel' />
+        title='Painel'/>
     );
   }
 }

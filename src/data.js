@@ -1,7 +1,7 @@
 const data = {
   menus: [
     { id: 1, text: 'Página Inicial', icon: 'dashboard', link: '/dashboard', 'parent': false, 'parent_id': '' },
-    { id: 2, text: 'Participantes', icon: 'face', link: '/participants', 'parent': false, 'parent_id': '' },
+    { id: 2, text: 'Participantes', icon: 'face', link: '/participants', 'parent': false, 'parent_id': '' }
   ],
   participants: [
     { id: 1, name: 'Gabriel', 'role': 'Frontend', 'status': 1 },

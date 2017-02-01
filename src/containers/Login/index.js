@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
@@ -11,22 +11,25 @@ const Login = () => {
   return (
     <MuiThemeProvider>
       <div className={styles.loginContainer}>
-        <Paper zDepth={1} className={styles.paper}>
-          <TextField
-            hintText='admin'
-            floatingLabelText='Usuário'
-          />
-          <TextField
-            hintText='***'
-            floatingLabelText='Senha'
-            type='password'
-          />
-          <div>
-            <Link to='/dashboard'>
-              <RaisedButton label='Entrar' primary={true} />
-            </Link>
-          </div>
-        </Paper>
+        <img src="#" />
+        <div>
+          <Paper zDepth={1} className={styles.paper}>
+            <TextField
+              hintText='admin'
+              floatingLabelText='Usuário'
+            />
+            <TextField
+              hintText='***'
+              floatingLabelText='Senha'
+              type='password'
+            />
+            <div>
+              <Link to='/dashboard'>
+                <RaisedButton label='Entrar' primary={true} className={styles.bt}/>
+              </Link>
+            </div>
+          </Paper>
+        </div>
       </div>
     </MuiThemeProvider>
   );

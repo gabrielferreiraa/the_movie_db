@@ -9,14 +9,16 @@
     background-color: #d9d9d9;
 }
 
-.paper{
-  padding: 10px;
-  text-align: center;
-  max-width: 450px;
-  height: auto;
-  position: absolute;
-  top: 10%;
-  left: 0;
-  right: 0;
-  margin: auto;
+.loginContainer img {
+    display: block;
+    margin: 0 auto;
+}
+
+.paper {
+    padding: 10px;
+    text-align: center;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
