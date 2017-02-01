@@ -19,7 +19,7 @@ module.exports = validate({
   ],
 
   output: {
-    path: path.join(__dirname, 'docs'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name]-[hash].js',
     publicPath: ''
   },
