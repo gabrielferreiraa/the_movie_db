@@ -1,35 +1,25 @@
+'use strict';
+
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import ArrowDropRight from 'material-ui/svg-icons/navigation-arrow-drop-right';
+import style from './css/left-drawer.css';
 
 class LeftDrawer extends Component {
   render () {
-    const style = {
-      bg: {
-        backgroundColor: '#333'
-      },
-      user: {
-        textAlign: 'center',
-        fontFamily: 'Roboto'
-      },
-      link: {
-        textDecoration: 'none'
-      }
-    };
-
     return (
       <Drawer
         docked={true}
         open={this.props.open}
-        style={style.bg}>
+        className={style.backgroundDrawer}>
         <div>
-          <h4 style={style.user}>Usuário Online</h4>
+          <h4 className={style.userOnline}>Usuário Online</h4>
         </div>
         <div>
           {this.props.menus.map((menu, index) =>
-            <Link to={menu.link} key={menu.id} style={style.link}>
+            <Link to={menu.link} key={menu.id} className={style.link}>
               <MenuItem
                 primaryText={menu.text}
                 leftIcon={

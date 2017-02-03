@@ -19,8 +19,8 @@ const SearchInputComponent = React.createClass({
   },
 
   render () {
-    const { placeholder, fields, keysToFilters } = this.props;
-    this.setEntityResult(this.props.data.filter(createFilter(this.state.searchTerm, keysToFilters)));
+    const { placeholder, fields, keysToFilters, data } = this.props;
+    this.setEntityResult(data.filter(createFilter(this.state.searchTerm, keysToFilters)));
     return (
       <SearchInput
         className='search-input'
