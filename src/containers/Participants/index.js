@@ -21,9 +21,9 @@ class Participants extends Component {
     this.getResultFiltered = this.getResultFiltered.bind(this);
   }
 
-  getResultFiltered (e) {
+  getResultFiltered (data) {
     this.setState({
-      result: e
+      result: data
     });
   }
 
