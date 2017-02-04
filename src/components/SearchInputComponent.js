@@ -52,9 +52,11 @@ class SearchInputComponent extends Component {
   }
 
   setStateResult (result) {
-    this.setState({
-      filteredResult: result
-    });
+    return (e) => {
+      this.setState({
+        filteredResult: result
+      });
+    }
   }
 
   render () {
