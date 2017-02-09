@@ -41,8 +41,8 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <Header handleChangeDrawer={this.handleChangeDrawer} styles={styles.header} drawerOpen={drawerOpen}/>
-          <LeftDrawer open={drawerOpen} menus={Data.menus} currentRoute={currentRoute}/>
+          <Header handleChangeDrawer={this.handleChangeDrawer} styles={styles.header} drawerOpen={drawerOpen} />
+          <LeftDrawer open={drawerOpen} menus={Data.menus} currentRoute={currentRoute} />
           <div style={styles.container}>
             {this.props.children}
           </div>

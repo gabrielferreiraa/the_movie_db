@@ -3,24 +3,34 @@
 import React, { Component, PropTypes } from 'react';
 import SearchInput, { createFilter } from 'utils/smartSearch';
 
-const SearchInputComponent = React.createClass({
-  getInitialState () {
-    return {
-      searchTerm: ''
+class SearchInputComponent extends Component {
+  constructor () {
+    super();
+    this.state = {
+      searchTerm: '',
+      filteredResult: []
     };
-  },
 
-  getEntityResult () {
-    return this.result;
-  },
+    this.setStateResult = this.setStateResult.bind(this);
+    this.searchUpdated = this.searchUpdated.bind(this);
+  }
 
-  setEntityResult (result) {
-    this.result = result;
-  },
+  setStateResult () {
+    const { keysToFilters, data } = this.props;
+    const result = data.filter(createFilter(this.state.searchTerm, keysToFilters));
+
+    this.setState({
+      filteredResult: result
+    });
+  }
+
+  componentWillMount () {
+    this.setStateResult();
+  }
 
   render () {
-    const { placeholder, fields, keysToFilters, data } = this.props;
-    this.setEntityResult(data.filter(createFilter(this.state.searchTerm, keysToFilters)));
+    const { placeholder, fields } = this.props;
+
     return (
       <SearchInput
         className='search-input'
@@ -29,57 +39,16 @@ const SearchInputComponent = React.createClass({
         onChange={this.searchUpdated}
       />
     );
-  },
+  }
 
   searchUpdated (term) {
     this.setState({
       searchTerm: term
     });
-    this.props.getResultFiltered(this.getEntityResult());
+    this.setStateResult();
+    this.props.getResultFiltered(this.state.filteredResult);
   }
-});
-
-// class SearchInputComponent extends Component {
-//   constructor () {
-//     super();
-//     this.state = {
-//       searchTerm: '',
-//       filteredResult: []
-//     };
-//
-//     this.setStateResult = this.setStateResult.bind(this);
-//     this.searchUpdated = this.searchUpdated.bind(this);
-//   }
-//
-//   setStateResult (result) {
-//     return (e) => {
-//       this.setState({
-//         filteredResult: result
-//       });
-//     }
-//   }
-//
-//   render () {
-//     const { placeholder, fields, keysToFilters, data } = this.props;
-//
-//     this.setStateResult(data.filter(createFilter(this.state.searchTerm, keysToFilters)));
-//     return (
-//       <SearchInput
-//         className='search-input'
-//         namePlaceholder={ placeholder }
-//         fields={ fields }
-//         onChange={this.searchUpdated}
-//       />
-//     );
-//   }
-//
-//   searchUpdated (term) {
-//     this.setState({
-//       searchTerm: term
-//     });
-//     this.props.getResultFiltered(this.state.filteredResult);
-//   }
-// }
+}
 
 SearchInputComponent.propTypes = {
   placeholder: PropTypes.string.isRequired,
