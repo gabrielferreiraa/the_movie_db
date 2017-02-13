@@ -2,7 +2,7 @@ const data = {
   menus: [
     { id: 1, text: 'Página Inicial', icon: 'dashboard', link: '/dashboard', 'parent': false, 'parent_id': '' },
     { id: 2, text: 'Participantes', icon: 'face', link: '/participants', 'parent': false, 'parent_id': '' },
-    { id: 3, text: 'Agendamentos', icon: 'schedule', link: '/schedules', 'parent': false, 'parent_id': '' }
+    { id: 3, text: 'Componentes', icon: 'schedule', link: '/components', 'parent': false, 'parent_id': '' }
   ],
   participants: [
     { id: 1, name: 'Gabriel', 'role': 'Frontend', 'status': 1 },

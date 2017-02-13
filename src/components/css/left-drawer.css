@@ -1,3 +1,6 @@
+.background > div{
+    background-color: #333 !important;
+}
 .userOnline{
     text-align: center;
 }

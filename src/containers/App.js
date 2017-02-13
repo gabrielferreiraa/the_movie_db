@@ -36,13 +36,12 @@ class App extends Component {
         transition: 'all 200ms ease'
       }
     };
-    const currentRoute = this.props.location.pathname;
 
     return (
       <MuiThemeProvider>
         <div>
           <Header handleChangeDrawer={this.handleChangeDrawer} styles={styles.header} drawerOpen={drawerOpen} />
-          <LeftDrawer open={drawerOpen} menus={Data.menus} currentRoute={currentRoute} />
+          <LeftDrawer open={drawerOpen} menus={Data.menus} />
           <div style={styles.container}>
             {this.props.children}
           </div>
