@@ -1,7 +1,9 @@
 {
   "scripts": {
     "start": "webpack-dashboard -- node server.js",
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p"
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -21,7 +23,8 @@
     "webpack": "^1.14.0",
     "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "^1.16.2",
-    "webpack-validator": "^2.3.0"
+    "webpack-validator": "^2.3.0",
+    "@kadira/storybook": "^2.21.0"
   },
   "dependencies": {
     "axios": "^0.15.3",
