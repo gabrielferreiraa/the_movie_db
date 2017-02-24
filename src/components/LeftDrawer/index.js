@@ -7,7 +7,7 @@ import ActionGrade from 'material-ui/svg-icons/action/grade';
 import ContentInbox from 'material-ui/svg-icons/content/inbox';
 import Subheader from 'material-ui/Subheader';
 import Drawer from 'material-ui/Drawer';
-import style from './css/left-drawer.css';
+import style from './left-drawer.css';
 
 class LeftDrawer extends Component {
   render () {

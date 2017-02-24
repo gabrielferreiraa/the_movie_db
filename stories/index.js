@@ -1,17 +1,10 @@
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Button from './Button';
-import Welcome from './Welcome';
-
-storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')}/>
-  ));
+import { storiesOf, action } from '@kadira/storybook';
 
 storiesOf('Button', module)
   .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
+    <button onClick={action('clicked')}>Hello Button</button>
   ))
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    <button onClick={action('clicked')}>😀 😎 👍 💯</button>
   ));
