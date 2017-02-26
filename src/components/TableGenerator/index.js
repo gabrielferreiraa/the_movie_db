@@ -34,8 +34,8 @@ class TableGenerator extends Component {
             <TableRow key={index} selected={row.selected}>
               <TableRowColumn>{row.id}</TableRowColumn>
               <TableRowColumn>{row.name}</TableRowColumn>
-              <TableRowColumn>{row.role}</TableRowColumn>
-              <TableRowColumn>{row.status === 0 ? 'Inativo' : 'Ativo'}</TableRowColumn>
+              <TableRowColumn>{row.cpf}</TableRowColumn>
+              <TableRowColumn>{row.added}</TableRowColumn>
               <TableRowColumn>
                 <Link to={`/${router}/form/${row.id}`}>
                   <FloatingActionButton

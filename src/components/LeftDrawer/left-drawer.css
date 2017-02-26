@@ -1,8 +1,8 @@
 .background > div{
     background-color: #333 !important;
 }
-.userOnline{
-    text-align: center;
+.background div {
+    color: #89949B !important;
 }
 .link{
     text-decoration: none;

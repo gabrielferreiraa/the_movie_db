@@ -2,14 +2,24 @@
 
 import React, { Component } from 'react';
 import TableGenerator from 'components/TableGenerator';
-import Data from 'src/data';
 import SearchInputComp from 'components/SearchInputComponent';
+import {Link} from 'react-router';
+import { callApi } from 'utils/formActions';
+import AlertContainer from 'react-alert';
 
 class Participants extends Component {
   constructor () {
     super();
     this.state = {
-      result: Data.participants
+      result: [],
+    };
+
+    this.alertOptions = {
+      offset: 14,
+      position: 'bottom right',
+      theme: 'dark',
+      time: 5000,
+      transition: 'fade'
     };
 
     this.getResultFiltered = this.getResultFiltered.bind(this);
@@ -21,22 +31,41 @@ class Participants extends Component {
     });
   }
 
+  componentDidMount(){
+    callApi('GET', 'participants', [], (e, status) => {
+      if(status === 'success'){
+        this.setState({
+          result: e.data
+        });
+      } else {
+        console.log(e);
+      }
+    });
+  }
+
   render () {
-    const keysToFilters = ['name', 'role'];
-    const indicators = ['ID', 'Nome', 'Cargo', 'Status', 'Ações'];
+    const keysToFilters = ['name', 'cpf'];
+    const indicators = ['ID', 'Nome', 'CPF', 'Adicionado em', 'Ações'];
     const data = this.state.result;
 
     return (
       <div>
         <span>Aplicação / Participantes</span>
+        <Link to='/participants/form'>
+          <button>Cadastro de Participantes</button>
+        </Link>
         <SearchInputComp
           getResultFiltered={this.getResultFiltered}
-          data={Data.participants}
+          data={this.state.result}
           keysToFilters={keysToFilters}
           placeholder='Pesquisa de Participantes'
           fields='Nome ou Cargo'
         />
         <TableGenerator indicators={indicators} data={data} router="participants" />
+        <AlertContainer
+          ref={(a) => global.msg = a}
+          {...this.alertOptions}
+        />
       </div>
     );
   }

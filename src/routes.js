@@ -15,6 +15,7 @@ export default (
       <Route path='dashboard' component={Dashboard} />
       <Route path='participants' component={Participants} />
       <Route path='participants/form/:id' component={ParticipantsForm} />
+      <Route path='participants/form' component={ParticipantsForm} />
       <Route path='components' component={Components} />
     </Route>
   </Route>

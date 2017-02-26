@@ -17,9 +17,6 @@ class LeftDrawer extends Component {
         open={this.props.open}
         className={style.background}>
         <div>
-          <h4 className={style.userOnline}>Usuário Online</h4>
-        </div>
-        <div>
           <List>
             <Subheader>Nested List Items</Subheader>
             {this.props.menus.map((menu, index) =>
@@ -36,7 +33,7 @@ class LeftDrawer extends Component {
             <ListItem
               primaryText="Inbox"
               leftIcon={<ContentInbox />}
-              initiallyOpen={true}
+              initiallyOpen={false}
               primaryTogglesNestedList={true}
               nestedListStyle={{ backgroundColor: 'rgba(0,0,0,0.2)' }}
               nestedItems={[
@@ -44,7 +41,7 @@ class LeftDrawer extends Component {
                   key={1}
                   primaryText="Starred"
                   leftIcon={<ActionGrade />}
-                />,
+                />
               ]}
             />
           </List>

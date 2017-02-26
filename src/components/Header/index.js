@@ -49,7 +49,7 @@ class Header extends Component {
             </IconButton>
           </Link>
         }
-        title='Painel'/>
+        title='Prêmio Totall'/>
     );
   }
 }
