@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import { callApi } from 'utils/formActions';
 import serialize from 'form-serialize';
+import { browserHistory } from 'react-router';
 
 class ParticipantsForm extends Component {
   constructor (props) {
@@ -12,11 +13,12 @@ class ParticipantsForm extends Component {
       isEditing: !!props.params.id,
       participant: {
         name: '',
-        cpf: '09788471994'
+        cpf: ''
       }
     };
 
     this.save = this.save.bind(this);
+    this._onHandleChange = this._onHandleChange.bind(this);
   }
 
   componentWillMount () {
@@ -36,44 +38,62 @@ class ParticipantsForm extends Component {
     }
   }
 
+  _handleSubmit(response) {
+    const method = !!this.props.params.id ? 'PUT' : 'POST';
+    const url = !!this.props.params.id ? `participants/${this.props.params.id}` : `participants`;
+
+    callApi(method, url, response, (e, status) => {
+      if (status === 'success') {
+        browserHistory.push('/participants');
+        msg.show(`Cadastro ${!!this.props.params.id ? 'editado' : 'realizado'} com sucesso`, {
+          type: 'success',
+          icon: <i className="material-icons" style={{ color: '#2ecc71' }}>check</i>
+        });
+      } else {
+        msg.show('Ocorreu um problema ao salvar o cadastro', {
+          type: 'error',
+          icon: <i className="material-icons" style={{ color: '#e74c3c' }}>error</i>
+        });
+      }
+    });
+  }
+
   save (e) {
     e.preventDefault();
     const formParticipant = document.querySelector('#formParticipant');
     const response = serialize(formParticipant, {
       hash: true
     });
-    console.log(response);
-    callApi('PUT', `participants/${this.props.params.id}`, response, (e, status) => {
-      if (status === 'success') {
-        console.log(e, 'success');
-      } else {
-        console.log(e);
+    this._handleSubmit(response);
+  }
+
+  _onHandleChange(event) {
+    this.setState({
+      participant: {
+        [event.target.name]: event.target.value
       }
     });
   }
 
   render () {
     const params = this.props.params;
+
     return (
       <div>
         <h1>{this.state.isEditing ? 'Editar' : 'Cadastrar'} Participante</h1>
         <form onSubmit={this.save} id="formParticipant">
           <TextField
-            value={params.id}
-            name="id"
-            floatingLabelText="ID do Participante"
-          />
-          <br/>
-          <TextField
             value={this.state.participant.name}
             name="name"
             floatingLabelText="Nome"
+            onChange={this._onHandleChange}
           />
           <br/>
           <TextField
-            defaultValue={this.state.participant.cpf}
+            value={this.state.participant.cpf}
             name="cpf"
             floatingLabelText="CPF"
+            onChange={this._onHandleChange}
           />
           <button type="submit">Salvar</button>
         </form>

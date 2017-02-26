@@ -42,9 +42,15 @@ class TableGenerator extends Component {
                     zDepth={0}
                     backgroundColor={'#E76049'}
                     mini={true}>
-                    <ContentCreate />
+                    <i className="material-icons">create</i>
                   </FloatingActionButton>
                 </Link>
+                <FloatingActionButton
+                  zDepth={0}
+                  backgroundColor={'#E76049'}
+                  mini={true}>
+                  <i className="material-icons">delete</i>
+                </FloatingActionButton>
               </TableRowColumn>
             </TableRow>
           ))}

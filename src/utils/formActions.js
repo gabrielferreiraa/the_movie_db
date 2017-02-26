@@ -15,7 +15,7 @@ export function authUser (method, entity, data = [], callback, fields = []) {
   });
 }
 
-export function callApi (method, entity, data = [], callback, fields = []) {
+export function callApi(method, entity, data = [], callback, fields = []) {
   return axios({
     method: method,
     data: data,
