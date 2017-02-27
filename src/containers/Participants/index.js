@@ -5,21 +5,13 @@ import TableGenerator from 'components/TableGenerator';
 import SearchInputComp from 'components/SearchInputComponent';
 import {Link} from 'react-router';
 import { callApi } from 'utils/formActions';
-import AlertContainer from 'react-alert';
 
 class Participants extends Component {
   constructor () {
     super();
     this.state = {
       result: [],
-    };
-
-    this.alertOptions = {
-      offset: 14,
-      position: 'bottom right',
-      theme: 'dark',
-      time: 5000,
-      transition: 'fade'
+      resultInternal: []
     };
 
     this.getResultFiltered = this.getResultFiltered.bind(this);
@@ -33,9 +25,10 @@ class Participants extends Component {
 
   componentDidMount(){
     callApi('GET', 'participants', [], (e, status) => {
-      if(status === 'success'){
+      if (status === 'success') {
         this.setState({
-          result: e.data
+          result: e.data,
+          resultInternal: e.data
         });
       } else {
         console.log(e);
@@ -56,16 +49,12 @@ class Participants extends Component {
         </Link>
         <SearchInputComp
           getResultFiltered={this.getResultFiltered}
-          data={this.state.result}
+          data={this.state.resultInternal}
           keysToFilters={keysToFilters}
           placeholder='Pesquisa de Participantes'
           fields='Nome ou Cargo'
         />
         <TableGenerator indicators={indicators} data={data} router="participants" />
-        <AlertContainer
-          ref={(a) => global.msg = a}
-          {...this.alertOptions}
-        />
       </div>
     );
   }

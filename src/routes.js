@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
+import { requireAuth } from 'utils/Auth';
 import LoginPage from 'containers/Login';
 import Dashboard from 'containers/Dashboard';
 import Components from 'containers/Components';
@@ -12,11 +13,11 @@ export default (
     <Route path='login' component={LoginPage} />
     <Route path='/' component={App}>
       <IndexRoute component={Dashboard} />
-      <Route path='dashboard' component={Dashboard} />
-      <Route path='participants' component={Participants} />
-      <Route path='participants/form/:id' component={ParticipantsForm} />
-      <Route path='participants/form' component={ParticipantsForm} />
-      <Route path='components' component={Components} />
+      <Route path='dashboard' component={Dashboard} onEnter={requireAuth} />
+      <Route path='participants' component={Participants} onEnter={requireAuth} />
+      <Route path='participants/form/:id' component={ParticipantsForm} onEnter={requireAuth} />
+      <Route path='participants/form' component={ParticipantsForm} onEnter={requireAuth} />
+      <Route path='components' component={Components} onEnter={requireAuth} />
     </Route>
   </Route>
 );

@@ -31,7 +31,7 @@ class LeftDrawer extends Component {
               </Link>
             )}
             <ListItem
-              primaryText="Inbox"
+              primaryText='Inbox'
               leftIcon={<ContentInbox />}
               initiallyOpen={false}
               primaryTogglesNestedList={true}
@@ -39,7 +39,7 @@ class LeftDrawer extends Component {
               nestedItems={[
                 <ListItem
                   key={1}
-                  primaryText="Starred"
+                  primaryText='Starred'
                   leftIcon={<ActionGrade />}
                 />
               ]}

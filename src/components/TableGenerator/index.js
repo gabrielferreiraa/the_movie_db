@@ -6,15 +6,9 @@ import {
 }
   from 'material-ui/Table';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentCreate from 'material-ui/svg-icons/content/create';
 import { Link } from 'react-router';
 
 class TableGenerator extends Component {
-  constructor () {
-    super();
-
-  }
-
   render () {
     const { indicators, data, router } = this.props;
     return (
@@ -42,14 +36,14 @@ class TableGenerator extends Component {
                     zDepth={0}
                     backgroundColor={'#E76049'}
                     mini={true}>
-                    <i className="material-icons">create</i>
+                    <i className='material-icons'>create</i>
                   </FloatingActionButton>
                 </Link>
                 <FloatingActionButton
                   zDepth={0}
                   backgroundColor={'#E76049'}
                   mini={true}>
-                  <i className="material-icons">delete</i>
+                  <i className='material-icons'>delete</i>
                 </FloatingActionButton>
               </TableRowColumn>
             </TableRow>

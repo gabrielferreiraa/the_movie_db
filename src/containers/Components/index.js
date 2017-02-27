@@ -5,7 +5,7 @@ import DatePicker from 'material-ui/DatePicker';
 
 const Components = () => {
   return (
-    <DatePicker hintText="Portrait Dialog" locale="pt-br"/>
+    <DatePicker hintText='Portrait Dialog' locale='pt-br'/>
   );
 };
 

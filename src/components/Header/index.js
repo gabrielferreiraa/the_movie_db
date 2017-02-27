@@ -1,7 +1,6 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
 import { white } from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import AppBar from 'material-ui/AppBar';
@@ -9,7 +8,7 @@ import Menu from 'material-ui/svg-icons/navigation/menu';
 
 class Header extends Component {
   render () {
-    const { styles, handleChangeDrawer, drawerOpen } = this.props;
+    const { styles, handleChangeDrawer, drawerOpen, handleLogout } = this.props;
 
     const bgApp = {
       bg: {
@@ -41,15 +40,14 @@ class Header extends Component {
           </IconButton>
         }
         iconElementRight={
-          <Link to='/login'>
-            <IconButton
-              style={bgApp.bt}
-            >
-              <i className='material-icons' style={{ color: '#89949B' }}>exit_to_app</i>
-            </IconButton>
-          </Link>
+          <IconButton
+            style={bgApp.bt}
+            onClick={handleLogout}
+          >
+            <i className='material-icons' style={{ color: '#89949B' }}>exit_to_app</i>
+          </IconButton>
         }
-        title='Prêmio Totall'/>
+        title='Prêmio Totall' />
     );
   }
 }

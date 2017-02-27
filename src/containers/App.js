@@ -1,9 +1,11 @@
 'use strict';
 
 import React, { Component } from 'react';
+import { signOut } from 'utils/Auth';
 import Header from 'components/Header';
 import LeftDrawer from 'components/LeftDrawer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AlertContainer from 'react-alert';
 import Data from '../data';
 
 class App extends Component {
@@ -11,6 +13,14 @@ class App extends Component {
     super();
     this.state = {
       open: true
+    };
+
+    this.alertOptions = {
+      offset: 14,
+      position: 'bottom right',
+      theme: 'dark',
+      time: 5000,
+      transition: 'fade'
     };
 
     this.handleChangeDrawer = this.handleChangeDrawer.bind(this);
@@ -40,11 +50,20 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <Header handleChangeDrawer={this.handleChangeDrawer} styles={styles.header} drawerOpen={drawerOpen} />
+          <Header
+            handleChangeDrawer={this.handleChangeDrawer}
+            styles={styles.header}
+            drawerOpen={drawerOpen}
+            handleLogout={signOut}
+          />
           <LeftDrawer open={drawerOpen} menus={Data.menus} />
           <div style={styles.container}>
             {this.props.children}
           </div>
+          <AlertContainer
+            ref={(a) => global.msg = a}
+            {...this.alertOptions}
+          />
         </div>
       </MuiThemeProvider>
     );
