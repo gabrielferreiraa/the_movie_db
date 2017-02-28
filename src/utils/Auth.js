@@ -18,7 +18,7 @@ function authUser (method, data = []) {
     url: URL_LOGIN
   })
     .then(response => response)
-    .catch(err => err.response.data);
+    .catch(err => err.response.data || false);
 }
 
 /**
