@@ -38,7 +38,7 @@ export async function signIn (email, password) {
     saveToken(result.data.data.token);
     setTimeout(() => { browserHistory.push('/dashboard'); }, 2000);
   } else {
-    Alert.error();
+    Alert.error('Não foi possível realizar o login');
   }
 }
 

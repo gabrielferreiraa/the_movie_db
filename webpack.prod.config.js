@@ -8,7 +8,10 @@ const htmlPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = validate({
-  entry: path.join(__dirname, 'src', 'index'),
+  entry: [
+    'babel-polyfill',
+    path.join(__dirname, 'src', 'index'),
+  ],
 
   output: {
     path: path.join(__dirname, 'docs'),

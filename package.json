@@ -4,6 +4,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
+  "homepage": "https://gabrielferreiraa.github.io/poc-react",
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
     "babel-core": "^6.21.0",
@@ -17,6 +18,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.26.0",
     "react-hot-loader": "^3.0.0-beta.2",
+    "react-scripts": "^0.9.2",
     "sass-loader": "^4.1.1",
     "semistandard": "^9.2.1",
     "semistandard-loader": "0.0.4",
@@ -35,6 +37,7 @@
     "react-alert": "^1.0.14",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",
+    "react-scripts": "^0.9.2",
     "react-search-input": "^0.10.4",
     "react-tap-event-plugin": "^2.0.1"
   },

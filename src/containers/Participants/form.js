@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import { callApi } from 'utils/formActions';
 import serialize from 'form-serialize';
 import { browserHistory } from 'react-router';
+import DatePicker from 'components/DatePicker';
 import * as Alert from 'components/Alert';
 
 class ParticipantsForm extends Component {
@@ -14,7 +15,9 @@ class ParticipantsForm extends Component {
       isEditing: !!props.params.id,
       participant: {
         name: '',
-        cpf: ''
+        cpf: '',
+        email: '',
+        password: ''
       }
     };
 
@@ -28,7 +31,9 @@ class ParticipantsForm extends Component {
         this.setState({
           participant: {
             name: e.data.name,
-            cpf: e.data.cpf
+            cpf: e.data.cpf,
+            email: e.data.email,
+            password: e.data.password
           }
         });
       } else {
@@ -86,6 +91,22 @@ class ParticipantsForm extends Component {
             floatingLabelText='CPF'
             onChange={this._onHandleChange}
           />
+          <br />
+          <TextField
+            value={this.state.participant.email}
+            name='email'
+            floatingLabelText='E-mail'
+            onChange={this._onHandleChange}
+          />
+          <br />
+          <TextField
+            value={this.state.participant.password}
+            name='password'
+            floatingLabelText='Senha'
+            type='password'
+            onChange={this._onHandleChange}
+          />
+          <br />
           <button type='submit'>Salvar</button>
         </form>
       </div>

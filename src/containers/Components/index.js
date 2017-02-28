@@ -1,12 +1,14 @@
 'use strict';
 
-import React from 'react';
-import DatePicker from 'material-ui/DatePicker';
+import React, { Component } from 'react';
+import DatePicker from 'components/DatePicker';
 
-const Components = () => {
-  return (
-    <DatePicker hintText='Portrait Dialog' locale='pt-br'/>
-  );
-};
+class Components extends Component{
+  render () {
+    return (
+      <DatePicker />
+    );
+  }
+}
 
 export default Components;

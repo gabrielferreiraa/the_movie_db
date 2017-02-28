@@ -11,13 +11,13 @@ import App from 'containers/App';
 export default (
   <Route>
     <Route path='login' component={LoginPage} />
-    <Route path='/' component={App}>
+    <Route path='/' component={App} onEnter={requireAuth}>
       <IndexRoute component={Dashboard} />
-      <Route path='dashboard' component={Dashboard} onEnter={requireAuth} />
-      <Route path='participants' component={Participants} onEnter={requireAuth} />
-      <Route path='participants/form/:id' component={ParticipantsForm} onEnter={requireAuth} />
-      <Route path='participants/form' component={ParticipantsForm} onEnter={requireAuth} />
-      <Route path='components' component={Components} onEnter={requireAuth} />
+      <Route path='dashboard' component={Dashboard} />
+      <Route path='participants' component={Participants} />
+      <Route path='participants/form/:id' component={ParticipantsForm} />
+      <Route path='participants/form' component={ParticipantsForm} />
+      <Route path='components' component={Components} />
     </Route>
   </Route>
 );
