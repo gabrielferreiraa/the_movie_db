@@ -2,7 +2,7 @@
 
 import * as Alert from 'components/Alert';
 import axios from 'axios';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import { URL_LOGIN } from 'utils/constants';
 
 /**
@@ -36,7 +36,7 @@ export async function signIn (email, password) {
   if (typeof result.data === 'object') {
     Alert.success('Login realizado com sucesso');
     saveToken(result.data.data.token);
-    setTimeout(() => { browserHistory.push('/dashboard'); }, 2000);
+    setTimeout(() => { hashHistory.push('/dashboard'); }, 2000);
   } else {
     Alert.error('Não foi possível realizar o login');
   }
@@ -47,7 +47,7 @@ export async function signIn (email, password) {
  */
 export function signOut () {
   removeToken();
-  browserHistory.push('/login');
+  hashHistory.push('/login');
 }
 
 /**

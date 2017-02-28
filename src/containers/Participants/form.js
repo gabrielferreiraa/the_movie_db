@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import { callApi } from 'utils/formActions';
 import serialize from 'form-serialize';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import DatePicker from 'components/DatePicker';
 import * as Alert from 'components/Alert';
 
@@ -48,7 +48,7 @@ class ParticipantsForm extends Component {
 
     callApi(method, url, response, (e, status) => {
       if (status === 'success') {
-        browserHistory.push('/participants');
+        hashHistory.push('/participants');
         Alert.success(`Cadastro ${!!this.props.params.id ? 'editado' : 'realizado'} com sucesso`);
       } else {
         Alert.error('Ocorreu um problema ao salvar o cadastro');
