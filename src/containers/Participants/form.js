@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import { callApi } from 'utils/formActions';
 import serialize from 'form-serialize';
 import { hashHistory } from 'react-router';
-import DatePicker from 'components/DatePicker';
+import InputElement from 'react-input-mask';
 import * as Alert from 'components/Alert';
 
 class ParticipantsForm extends Component {

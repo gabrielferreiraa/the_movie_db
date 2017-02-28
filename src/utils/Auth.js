@@ -16,9 +16,7 @@ function authUser (method, data = []) {
     method: method,
     data: data,
     url: URL_LOGIN
-  })
-    .then(response => response)
-    .catch(err => err.response.data || false);
+  });
 }
 
 /**
@@ -32,12 +30,20 @@ export async function signIn (email, password) {
     password: password
   };
 
-  const result = await authUser('POST', formData);
-  if (typeof result.data === 'object') {
-    Alert.success('Login realizado com sucesso');
-    saveToken(result.data.data.token);
-    setTimeout(() => { hashHistory.push('/dashboard'); }, 2000);
-  } else {
+  try {
+    const result = await authUser('POST', formData);
+    if (typeof result.data !== 'undefined') {
+      if (typeof result.data === 'object') {
+        Alert.success('Login realizado com sucesso');
+        saveToken(result.data.data.token);
+        setTimeout(() => { hashHistory.push('/dashboard'); }, 2000);
+      } else {
+        Alert.error('Não foi possível realizar o login');
+      }
+    } else {
+      Alert.error('Não foi possível realizar o login');
+    }
+  } catch (err) {
     Alert.error('Não foi possível realizar o login');
   }
 }
