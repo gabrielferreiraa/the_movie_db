@@ -3,8 +3,10 @@
 import React, { Component } from 'react';
 import TableGenerator from 'components/TableGenerator';
 import SearchInputComp from 'components/SearchInputComponent';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import { callApi } from 'utils/formActions';
+import RaisedButton from 'material-ui/RaisedButton';
+import { green600, white } from 'material-ui/styles/colors';
 
 class Participants extends Component {
   constructor () {
@@ -23,12 +25,12 @@ class Participants extends Component {
     });
   }
 
-  componentDidMount(){
+  componentDidMount () {
     callApi('GET', 'participants', [], (e, status) => {
-      if (status === 'success') {
+      if (e.status === 200) {
         this.setState({
-          result: e.data,
-          resultInternal: e.data
+          result: e.data.data,
+          resultInternal: e.data.data
         });
       } else {
         console.log(e);
@@ -38,14 +40,20 @@ class Participants extends Component {
 
   render () {
     const keysToFilters = ['name', 'cpf'];
-    const indicators = ['ID', 'Nome', 'CPF', 'Adicionado em', 'Ações'];
+    const indicators = ['ID', 'Nome', 'CPF', 'Adicionado em'];
     const data = this.state.result;
 
     return (
       <div>
         <span>Aplicação / Participantes</span>
         <Link to='/participants/form'>
-          <button>Cadastro de Participantes</button>
+          <RaisedButton
+            label="Cadastrar Participante"
+            backgroundColor={green600}
+            labelColor={white}
+            style={{ float: 'right' }}
+            icon={<i className='material-icons' style={{ color: '#FFF' }}>control_point</i>}
+          />
         </Link>
         <SearchInputComp
           getResultFiltered={this.getResultFiltered}
@@ -54,7 +62,10 @@ class Participants extends Component {
           placeholder='Pesquisa de Participantes'
           fields='Nome ou Cargo'
         />
-        <TableGenerator indicators={indicators} data={data} router="participants" />
+        <TableGenerator
+          indicators={indicators}
+          data={data}
+          router="participants"/>
       </div>
     );
   }

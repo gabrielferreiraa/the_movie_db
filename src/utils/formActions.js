@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { getToken } from 'utils/Auth';
 import { ENDPOINT } from 'utils/constants';
+import * as Alert from 'components/Alert';
 
 export function callApi (method, entity, data = [], callback, fields = []) {
   return axios({
@@ -13,8 +14,18 @@ export function callApi (method, entity, data = [], callback, fields = []) {
     },
     url: ENDPOINT + entity
   }).then(function (e) {
-    callback(e.data, 'success');
+    callback(e);
   }).catch(function (e) {
-    callback(e, 'error');
+    try {
+      const errors = JSON.parse(e.response.data.message);
+
+      for(let key in errors){
+        Alert.error(errors[key]);
+      }
+    } catch (err) {
+      Alert.error(e.response.data.message);
+    }
+
+    callback(e);
   });
 }

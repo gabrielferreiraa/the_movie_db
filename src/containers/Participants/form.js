@@ -5,7 +5,6 @@ import TextField from 'material-ui/TextField';
 import { callApi } from 'utils/formActions';
 import serialize from 'form-serialize';
 import { hashHistory } from 'react-router';
-import InputElement from 'react-input-mask';
 import * as Alert from 'components/Alert';
 
 class ParticipantsForm extends Component {
@@ -27,13 +26,14 @@ class ParticipantsForm extends Component {
 
   componentWillMount () {
     this.state.isEditing ? callApi('GET', `participants/${this.props.params.id}`, [], (e, status) => {
-      if (status === 'success') {
+      if (e.status === 200) {
+        const participant = e.data.data;
         this.setState({
           participant: {
-            name: e.data.name,
-            cpf: e.data.cpf,
-            email: e.data.email,
-            password: e.data.password
+            name: participant.name,
+            cpf: participant.cpf,
+            email: participant.email,
+            password: participant.password
           }
         });
       } else {
@@ -46,12 +46,12 @@ class ParticipantsForm extends Component {
     const method = !!this.props.params.id ? 'PUT' : 'POST';
     const url = !!this.props.params.id ? `participants/${this.props.params.id}` : `participants`;
 
-    callApi(method, url, response, (e, status) => {
-      if (status === 'success') {
+    callApi(method, url, response, (e) => {
+      if (e.status === 200) {
         hashHistory.push('/participants');
         Alert.success(`Cadastro ${!!this.props.params.id ? 'editado' : 'realizado'} com sucesso`);
       } else {
-        Alert.error('Ocorreu um problema ao salvar o cadastro');
+        console.log('Ocorreu um problema ao salvar o cadastro');
       }
     });
   }
