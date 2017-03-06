@@ -5,6 +5,8 @@ import { callApi } from 'utils/formActions';
 import serialize from 'form-serialize';
 import { hashHistory } from 'react-router';
 import Input from 'components/Input';
+import {Tabs, Tab} from 'material-ui/Tabs';
+import SwipeableViews from 'react-swipeable-views';
 import * as Alert from 'components/Alert';
 
 class ParticipantsForm extends Component {
@@ -12,6 +14,7 @@ class ParticipantsForm extends Component {
     super(props);
     this.state = {
       isEditing: !!props.params.id,
+      slideIndex: 0,
       participant: {
         name: '',
         cpf: '',
@@ -68,11 +71,41 @@ class ParticipantsForm extends Component {
     });
   }
 
+  handleChangeTab = (value) => {
+    this.setState({
+      slideIndex: value,
+    });
+  };
+
   render () {
     return (
       <div>
         <h1>{this.state.isEditing ? 'Editar' : 'Cadastrar'} Participante</h1>
         <form onSubmit={this._handleSubmit} id='formParticipant'>
+
+          <Tabs
+            onChange={this.handleChangeTab}
+            value={this.state.slideIndex}>
+            <Tab label="Tab One" value={0} />
+            <Tab label="Tab Two" value={1} />
+            <Tab label="Tab Three" value={2} />
+          </Tabs>
+
+          <SwipeableViews
+            index={this.state.slideIndex}
+            onChangeIndex={this.handleChangeTab}
+          >
+            <div>
+              slide n°1
+            </div>
+            <div>
+              slide n°2
+            </div>
+            <div>
+              slide n°3
+            </div>
+          </SwipeableViews>
+
           <Input
             name='name'
             label='Nome'
