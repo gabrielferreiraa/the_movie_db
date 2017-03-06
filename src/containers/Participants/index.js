@@ -55,7 +55,7 @@ class Participants extends Component {
         <TableGenerator
           indicators={indicators}
           data={data}
-          router="participants"/>
+          router='participants'/>
       </div>
     );
   }

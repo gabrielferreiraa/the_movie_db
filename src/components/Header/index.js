@@ -47,7 +47,7 @@ class Header extends Component {
             <i className='material-icons' style={{ color: '#89949B' }}>exit_to_app</i>
           </IconButton>
         }
-        title='Prêmio Totall' />
+        title='POC React' />
     );
   }
 }

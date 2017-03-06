@@ -1,6 +1,6 @@
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import RaisedButton from 'material-ui/RaisedButton';
 import { green600, white } from 'material-ui/styles/colors';
@@ -19,6 +19,11 @@ const AddButton = ({ router, labelName }) => {
       />
     </Link>
   );
+};
+
+AddButton.propTypes = {
+  router: PropTypes.string.isRequired,
+  labelName: PropTypes.string.isRequired
 };
 
 export default AddButton;

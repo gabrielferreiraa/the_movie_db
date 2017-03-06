@@ -19,7 +19,7 @@ export function callApi (method, entity, data = [], callback, fields = []) {
     try {
       const errors = JSON.parse(e.response.data.message);
 
-      for(let key in errors){
+      for (let key in errors) {
         Alert.error(errors[key]);
       }
     } catch (err) {

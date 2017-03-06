@@ -32,7 +32,7 @@ class TableGenerator extends Component {
   }
 
   handleDelete () {
-    this.setState({ open: true });
+    this.handleChange();
 
     callApi('DELETE', `participants/${this.state.id}`, [], (e, status) => {
 
@@ -43,7 +43,6 @@ class TableGenerator extends Component {
       }
       this.handleChange();
     });
-
   }
 
   render () {

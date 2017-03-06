@@ -2,11 +2,15 @@
 
 import React, { Component } from 'react';
 import DatePicker from 'components/DatePicker';
+import Input from 'components/Input';
 
-class Components extends Component{
+class Components extends Component {
   render () {
     return (
-      <DatePicker />
+      <div>
+        <DatePicker />
+        <Input mask="999.999.999-99" name="Data" label="Data de Nascimento" />
+      </div>
     );
   }
 }

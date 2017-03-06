@@ -1,10 +1,10 @@
 'use strict';
 
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
 import { callApi } from 'utils/formActions';
 import serialize from 'form-serialize';
 import { hashHistory } from 'react-router';
+import Input from 'components/Input';
 import * as Alert from 'components/Alert';
 
 class ParticipantsForm extends Component {
@@ -29,12 +29,7 @@ class ParticipantsForm extends Component {
       if (e.status === 200) {
         const participant = e.data.data;
         this.setState({
-          participant: {
-            name: participant.name,
-            cpf: participant.cpf,
-            email: participant.email,
-            password: participant.password
-          }
+          participant: participant
         });
       } else {
         console.log(e);
@@ -78,34 +73,28 @@ class ParticipantsForm extends Component {
       <div>
         <h1>{this.state.isEditing ? 'Editar' : 'Cadastrar'} Participante</h1>
         <form onSubmit={this._handleSubmit} id='formParticipant'>
-          <TextField
-            value={this.state.participant.name}
+          <Input
             name='name'
-            floatingLabelText='Nome'
-            onChange={this._onHandleChange}
-          />
+            label='Nome'
+            value={this.state.participant.name} />
           <br />
-          <TextField
-            value={this.state.participant.cpf}
+          <Input
+            mask='999.999.999-99'
+            masked={true}
             name='cpf'
-            floatingLabelText='CPF'
-            onChange={this._onHandleChange}
-          />
+            label='CPF'
+            value={this.state.participant.cpf} />
           <br />
-          <TextField
-            value={this.state.participant.email}
+          <Input
             name='email'
-            floatingLabelText='E-mail'
-            onChange={this._onHandleChange}
-          />
+            label='E-mail'
+            value={this.state.participant.email} />
           <br />
-          <TextField
-            value={this.state.participant.password}
+          <Input
             name='password'
-            floatingLabelText='Senha'
+            label='Senha'
             type='password'
-            onChange={this._onHandleChange}
-          />
+            value={this.state.participant.password} />
           <br />
           <button type='submit'>Salvar</button>
         </form>
