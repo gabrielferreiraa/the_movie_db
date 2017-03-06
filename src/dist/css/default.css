@@ -1,0 +1,37 @@
+* {
+    font-family: 'Lato-Regular';
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('../fonts/hinted-Lato-Regular.eot');
+    src: local('Lato Regular'), local('Lato-Regular'),
+    url('../fonts/hinted-Lato-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/hinted-Lato-Regular.woff') format('woff'),
+    url('../fonts/hinted-Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('../fonts/hinted-Lato-Bold.eot');
+    src: local('Lato Bold'), local('Lato-Bold'),
+    url('../fonts/hinted-Lato-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/hinted-Lato-Bold.woff') format('woff'),
+    url('../fonts/hinted-Lato-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../fonts/hinted-Lato-Light.eot');
+    src: local('Lato-Light'),
+    url('../fonts/hinted-Lato-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/hinted-Lato-Light.woff') format('woff'),
+    url('../fonts/hinted-Lato-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}

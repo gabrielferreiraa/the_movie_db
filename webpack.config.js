@@ -54,6 +54,11 @@ module.exports = validate({
       exclude: /node_modules/,
       include: /src/,
       loaders: ['style', 'css?modules']
+    }, {
+      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      exclude: /node_modules/,
+      include: /src/,
+      loader: 'file?name=public/fonts/[name].[ext]'
     }]
   },
 
@@ -62,7 +67,8 @@ module.exports = validate({
       src: path.join(__dirname, 'src'),
       components: path.join(__dirname, 'src', 'components'),
       containers: path.join(__dirname, 'src', 'containers'),
-      utils: path.join(__dirname, 'src', 'utils')
+      utils: path.join(__dirname, 'src', 'utils'),
+      dist: path.join(__dirname, 'src', 'dist')
     }
   }
 });

@@ -3,10 +3,8 @@
 import React, { Component } from 'react';
 import TableGenerator from 'components/TableGenerator';
 import SearchInputComp from 'components/SearchInputComponent';
-import { Link } from 'react-router';
 import { callApi } from 'utils/formActions';
-import RaisedButton from 'material-ui/RaisedButton';
-import { green600, white } from 'material-ui/styles/colors';
+import AddButton from 'components/AddButton';
 
 class Participants extends Component {
   constructor () {
@@ -46,15 +44,7 @@ class Participants extends Component {
     return (
       <div>
         <span>Aplicação / Participantes</span>
-        <Link to='/participants/form'>
-          <RaisedButton
-            label="Cadastrar Participante"
-            backgroundColor={green600}
-            labelColor={white}
-            style={{ float: 'right' }}
-            icon={<i className='material-icons' style={{ color: '#FFF' }}>control_point</i>}
-          />
-        </Link>
+        <AddButton router='participants' labelName='Cadastrar Participante' />
         <SearchInputComp
           getResultFiltered={this.getResultFiltered}
           data={this.state.resultInternal}

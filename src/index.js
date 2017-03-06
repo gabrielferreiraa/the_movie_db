@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 import { Router, hashHistory } from 'react-router';
 import routes from './routes';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import './style-default.css';
+import './dist/css/default.css';
 
 injectTapEventPlugin();
 
