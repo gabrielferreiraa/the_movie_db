@@ -12,7 +12,8 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      open: true
+      open: true,
+      isFetching: true
     };
 
     this.alertOptions = {
@@ -24,6 +25,12 @@ class App extends Component {
     };
 
     this.handleChangeDrawer = this.handleChangeDrawer.bind(this);
+  }
+
+  componentDidMount () {
+    this.setState({
+      isFetching: false
+    });
   }
 
   handleChangeDrawer () {

@@ -1,6 +1,11 @@
 * {
-    font-family: 'Lato-Regular';
+    font-family: 'Lato-Regular', sans-serif;
     font-weight: normal;
+}
+
+input {
+    font-family: 'Lato-Regular', sans-serif !important;
+    font-weight: normal !important;
 }
 
 @font-face {

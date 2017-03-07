@@ -50,7 +50,6 @@ class Participants extends Component {
           data={this.state.resultInternal}
           keysToFilters={keysToFilters}
           placeholder='Pesquisa de Participantes'
-          fields='Nome ou Cargo'
         />
         <TableGenerator
           indicators={indicators}

@@ -3,8 +3,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { List, ListItem } from 'material-ui/List';
-import ActionGrade from 'material-ui/svg-icons/action/grade';
-import ContentInbox from 'material-ui/svg-icons/content/inbox';
 import Subheader from 'material-ui/Subheader';
 import Drawer from 'material-ui/Drawer';
 import style from './left-drawer.css';
@@ -25,25 +23,29 @@ class LeftDrawer extends Component {
                   primaryText={menu.text}
                   key={index}
                   leftIcon={
-                    <i className='material-icons' style={{ color: '#89949B' }}>{menu.icon}</i>
+                    <i className='material-icons' style={{ color: '#98a6ad' }}>{menu.icon}</i>
                   }
                 />
               </Link>
             )}
             <ListItem
               primaryText='Inbox'
-              leftIcon={<ContentInbox />}
+              leftIcon={<i className='material-icons' style={{ color: '#98a6ad' }}>security</i>}
               initiallyOpen={false}
+              nestedListStyle={{ marginLeft: '35px' }}
               primaryTogglesNestedList={true}
-              nestedListStyle={{ backgroundColor: 'rgba(0,0,0,0.2)' }}
               nestedItems={[
                 <ListItem
                   key={1}
                   primaryText='Starred'
-                  leftIcon={<ActionGrade />}
+                />,
+                <ListItem
+                  key={2}
+                  primaryText='Menu'
                 />
               ]}
             />
+
           </List>
         </div>
       </Drawer>

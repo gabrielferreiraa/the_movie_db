@@ -9,7 +9,9 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import { Link } from 'react-router';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import Icon from 'components/Icon';
 import { callApi } from 'utils/formActions';
+import { COLOR_DEFAULT } from 'utils/constants';
 import * as Alert from 'components/Alert';
 
 class TableGenerator extends Component {
@@ -35,7 +37,6 @@ class TableGenerator extends Component {
     this.handleChange();
 
     callApi('DELETE', `participants/${this.state.id}`, [], (e, status) => {
-
       if (e.status === 200) {
         Alert.success('Registro excluido com sucesso');
       } else {
@@ -83,19 +84,19 @@ class TableGenerator extends Component {
                   <Link to={`/${router}/form/${row.id}`}>
                     <FloatingActionButton
                       zDepth={0}
-                      iconStyle={{ backgroundColor: 'transparent', 'color': '#E76049' }}
+                      iconStyle={{ backgroundColor: 'transparent', 'color': COLOR_DEFAULT }}
                       mini={true}>
-                      <i className='material-icons'>create</i>
+                      <Icon icon='create' color='#98a6ad' />
                     </FloatingActionButton>
                   </Link>
                   <a
                     onClick={() => this.handleChange(row.id)}>
                     <FloatingActionButton
                       zDepth={0}
-                      iconStyle={{ backgroundColor: 'transparent', 'color': '#E76049' }}
+                      iconStyle={{ backgroundColor: 'transparent', 'color': COLOR_DEFAULT }}
                       backgroundColor={'transparent'}
                       mini={true}>
-                      <i className='material-icons'>delete</i>
+                      <Icon icon='delete' color='#98a6ad'/>
                     </FloatingActionButton>
                   </a>
                 </TableRowColumn>
@@ -115,7 +116,7 @@ class TableGenerator extends Component {
           actions={actions}
           modal={false}
           open={this.state.open}
-          onRequestClose={this.handleClose}
+          onRequestClose={this.handleChange}
         >
           Deseja realmente excluir este registro?
         </Dialog>

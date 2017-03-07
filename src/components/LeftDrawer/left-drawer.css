@@ -1,8 +1,13 @@
 .background > div{
-    background-color: #333 !important;
+    background-color: #36404a !important;
 }
 .background div {
-    color: #89949B !important;
+    color: #98a6ad !important;
+}
+.background span:hover div,
+.background span:hover i{
+    transition: all 200ms ease;
+    color: #2dc4b9 !important;
 }
 .link{
     text-decoration: none;

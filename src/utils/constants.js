@@ -22,4 +22,4 @@ export const LIGHT = 'Lato-Light';
  * Default color Premio Totall
  * @type {string}
  */
-export const ORANGE = '#E76049';
+export const COLOR_DEFAULT = '#2dc4b9';

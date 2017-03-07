@@ -46,14 +46,14 @@ const Search = React.createClass({
   },
 
   render () {
-    const { className, inputClassName, namePlaceholder, fields, ...inputProps } = this.props;
+    const { className, inputClassName, namePlaceholder, ...inputProps } = this.props;
     inputProps.value = this.state.searchTerm;
     inputProps.onChange = this.updateSearch;
     inputProps.className = inputClassName;
     return (
       <div className={className}>
         <TextField
-          hintText={`${namePlaceholder} (${fields})`}
+          hintText={`${namePlaceholder}`}
           {...inputProps}
           fullWidth={true}
         />

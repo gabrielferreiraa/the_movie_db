@@ -3,7 +3,9 @@
 import React, { Component, PropTypes } from 'react';
 import { white } from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
+import Icon from 'components/Icon';
 import AppBar from 'material-ui/AppBar';
+import { COLOR_DEFAULT } from 'utils/constants';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 
 class Header extends Component {
@@ -12,14 +14,14 @@ class Header extends Component {
 
     const bgApp = {
       bg: {
-        backgroundColor: '#333',
+        backgroundColor: '#36404a',
         fontFamily: 'Roboto',
         position: 'fixed',
         top: 0,
         overflow: 'hidden'
       },
       bt: {
-        backgroundColor: '#E76049',
+        backgroundColor: COLOR_DEFAULT,
         color: '#fff',
         marginRight: drawerOpen ? 255 : 2.5
       },
@@ -34,17 +36,15 @@ class Header extends Component {
         iconElementLeft={
           <IconButton
             style={bgApp.icon}
-            onClick={handleChangeDrawer}
-          >
+            onClick={handleChangeDrawer}>
             <Menu color={white} />
           </IconButton>
         }
         iconElementRight={
           <IconButton
             style={bgApp.bt}
-            onClick={handleLogout}
-          >
-            <i className='material-icons' style={{ color: '#89949B' }}>exit_to_app</i>
+            onClick={handleLogout}>
+            <Icon icon='exit_to_app' color='#FFF'/>
           </IconButton>
         }
         title='POC React' />

@@ -29,13 +29,12 @@ class SearchInputComponent extends Component {
   }
 
   render () {
-    const { placeholder, fields } = this.props;
+    const { placeholder } = this.props;
 
     return (
       <SearchInput
         className='search-input'
         namePlaceholder={placeholder}
-        fields={fields}
         onChange={this.searchUpdated}
       />
     );
@@ -52,7 +51,6 @@ class SearchInputComponent extends Component {
 
 SearchInputComponent.propTypes = {
   placeholder: PropTypes.string.isRequired,
-  fields: PropTypes.string.isRequired,
   keysToFilters: PropTypes.array.isRequired,
   getResultFiltered: PropTypes.func.isRequired
 };
