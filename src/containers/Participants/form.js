@@ -74,28 +74,13 @@ class ParticipantsForm extends Component {
       <div>
         <h1>{this.state.isEditing ? 'Editar' : 'Cadastrar'} Participante</h1>
         <form onSubmit={this._handleSubmit} id='formParticipant'>
-          <Input
-            name='name'
-            label='Nome'
-            value={this.state.participant.name} />
+          <Input name='name' label='Nome' value={this.state.participant.name} />
           <br />
-          <Input
-            mask='999.999.999-99'
-            masked={true}
-            name='cpf'
-            label='CPF'
-            value={this.state.participant.cpf} />
+          <Input mask='999.999.999-99' masked={true} name='cpf' label='CPF' value={this.state.participant.cpf} />
           <br />
-          <Input
-            name='email'
-            label='E-mail'
-            value={this.state.participant.email} />
+          <Input name='email' label='E-mail' value={this.state.participant.email} />
           <br />
-          <Input
-            name='password'
-            label='Senha'
-            type='password'
-            value={this.state.participant.password} />
+          <Input name='password' label='Senha' type='password' value={this.state.participant.password} />
           <br />
           <button type='submit'>Salvar</button>
         </form>
