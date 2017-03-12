@@ -59,11 +59,6 @@ module.exports = validate({
       exclude: /node_modules/,
       include: /src/,
       loader: 'file?name=public/fonts/[name].[ext]'
-    }, {
-      test: /\.css$/,
-      loader: 'style!css!postcss',
-      include: /src/,
-      exclude: /node_modules/,
     }]
   },
 
