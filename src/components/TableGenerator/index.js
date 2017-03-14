@@ -46,6 +46,24 @@ class TableGenerator extends Component {
     });
   }
 
+  generateIndicators (indicators) {
+    const header = [];
+    for (let i in indicators){
+      header.push(<TableHeaderColumn key={i} tooltip={indicators[i]}>{indicators[i]}</TableHeaderColumn>)
+    }
+
+    return header;
+  }
+
+  generateRows (row) {
+    const rows = [];
+    for (let i in row) {
+      rows.push(<TableRowColumn>{row[i]}</TableRowColumn>);
+    }
+
+    return rows;
+  }
+
   render () {
     const { indicators, data, router } = this.props;
 
@@ -67,47 +85,42 @@ class TableGenerator extends Component {
         <Table>
           <TableHeader>
             <TableRow>
-              {indicators.map((indicator, index) => {
-                return <TableHeaderColumn key={index} tooltip={indicator}>{indicator}</TableHeaderColumn>
-              })}
+              {this.generateIndicators(indicators)}
               <TableHeaderColumn tooltip='Ações'>Ações</TableHeaderColumn>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {data.map((row, index) => (
-              <TableRow key={index} selected={row.selected}>
-                <TableRowColumn>{row.id}</TableRowColumn>
-                <TableRowColumn>{row.name}</TableRowColumn>
-                <TableRowColumn>{row.cpf}</TableRowColumn>
-                <TableRowColumn>{row.createdAt}</TableRowColumn>
-                <TableRowColumn>
-                  <Link to={`/${router}/form/${row.id}`}>
-                    <FloatingActionButton
-                      zDepth={0}
-                      iconStyle={{ backgroundColor: 'transparent', 'color': COLOR_DEFAULT }}
-                      mini={true}>
-                      <Icon icon='create' color='#98a6ad' />
-                    </FloatingActionButton>
-                  </Link>
-                  <a
-                    onClick={() => this.handleChange(row.id)}>
-                    <FloatingActionButton
-                      zDepth={0}
-                      iconStyle={{ backgroundColor: 'transparent', 'color': COLOR_DEFAULT }}
-                      backgroundColor={'transparent'}
-                      mini={true}>
-                      <Icon icon='delete' color='#98a6ad'/>
-                    </FloatingActionButton>
-                  </a>
-                </TableRowColumn>
-              </TableRow>
-            ))}
+            {data.map((row, index) => {
+              return (
+                <TableRow key={index} selected={row.selected}>
+                  {this.generateRows(row)}
+                  <TableRowColumn>
+                    <Link to={`/${router}/form/${row.id}`}>
+                      <FloatingActionButton
+                        zDepth={0}
+                        iconStyle={{ backgroundColor: 'transparent', 'color': COLOR_DEFAULT }}
+                        mini={true}>
+                        <Icon icon='create' color='#98a6ad' />
+                      </FloatingActionButton>
+                    </Link>
+                    <a
+                      onClick={() => this.handleChange(row.id)}>
+                      <FloatingActionButton
+                        zDepth={0}
+                        iconStyle={{ backgroundColor: 'transparent', 'color': COLOR_DEFAULT }}
+                        backgroundColor={'transparent'}
+                        mini={true}>
+                        <Icon icon='delete' color='#98a6ad'/>
+                      </FloatingActionButton>
+                    </a>
+                  </TableRowColumn>
+                </TableRow>
+              );
+            })}
           </TableBody>
           <TableFooter>
             <TableRow>
-              {indicators.map((indicator, index) => {
-                return <TableHeaderColumn key={index} tooltip={indicator}>{indicator}</TableHeaderColumn>
-              })}
+              {this.generateIndicators(indicators)}
               <TableHeaderColumn tooltip='Ações'>Ações</TableHeaderColumn>
             </TableRow>
           </TableFooter>

@@ -11,7 +11,13 @@ class Participants extends Component {
     super();
     this.state = {
       result: [],
-      resultInternal: []
+      resultInternal: [],
+      indicators: {
+        'id': 'ID',
+        'name': 'Nome',
+        'cpf': 'CPF',
+        'createdAt': 'Adicionado em'
+      }
     };
 
     this.getResultFiltered = this.getResultFiltered.bind(this);
@@ -27,18 +33,17 @@ class Participants extends Component {
     callApi('GET', 'participants', [], (e, status) => {
       if (e.status === 200) {
         this.setState({
-          result: e.data.data,
-          resultInternal: e.data.data
+          result: e.data.data.data,
+          resultInternal: e.data.data.data
         });
       } else {
         console.log(e);
       }
-    });
+    }, this.state.indicators);
   }
 
   render () {
     const keysToFilters = ['name', 'cpf'];
-    const indicators = ['ID', 'Nome', 'CPF', 'Adicionado em'];
     const data = this.state.result;
 
     return (
@@ -52,7 +57,7 @@ class Participants extends Component {
           placeholder='Pesquisa de Participantes'
         />
         <TableGenerator
-          indicators={indicators}
+          indicators={this.state.indicators}
           data={data}
           router='participants'/>
       </div>
