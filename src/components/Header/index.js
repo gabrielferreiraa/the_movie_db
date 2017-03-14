@@ -7,6 +7,7 @@ import Icon from 'components/Icon';
 import AppBar from 'material-ui/AppBar';
 import { COLOR_DEFAULT } from 'utils/constants';
 import Menu from 'material-ui/svg-icons/navigation/menu';
+import './header.css';
 
 class Header extends Component {
   render () {

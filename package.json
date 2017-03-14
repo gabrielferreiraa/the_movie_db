@@ -2,7 +2,8 @@
   "scripts": {
     "start": "webpack-dashboard -- node server.js",
     "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 9001 -c storybook",
+    "build-storybook": "build-storybook -c storybook",
     "deploy": "gh-pages -d docs"
   },
   "homepage": "https://gabrielferreiraa.github.io/poc-react",
