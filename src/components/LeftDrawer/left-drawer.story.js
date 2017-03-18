@@ -4,6 +4,6 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
 storiesOf('Left Drawer', module)
-  .add('Barra Lateral', () => (
+  .add('Drawer', () => (
     <div>Barra</div>
   ));
