@@ -31,7 +31,7 @@ module.exports = validate({
     new DashboardPlugin(),
 
     new htmlPlugin({
-      title: 'POC React',
+      title: 'API Movie DB',
       template: path.join(__dirname, 'src', 'template.html')
     })
   ],

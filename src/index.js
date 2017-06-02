@@ -1,14 +1,19 @@
 'use strict';
 
 import React from 'react';
-import { render } from 'react-dom';
-import { Router, hashHistory } from 'react-router';
-import routes from './routes';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import ReactDOM from 'react-dom';
+import App from './containers/App';
+import {combineReducers, createStore} from 'redux';
+import {Provider} from 'react-redux';
 import './dist/css/default.css';
 
-injectTapEventPlugin();
+const reducers = combineReducers({
+    app: () => ({value: 'Opa'})
+});
 
-render(
-  <Router routes={routes} history={hashHistory} />, document.querySelector('[data-js="app"]')
-);
+
+ReactDOM.render(
+    <Provider store={createStore(reducers)}>
+        <App />
+    </Provider>
+    , document.querySelector('[data-js="app"]'));
