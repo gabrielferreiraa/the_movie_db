@@ -5,12 +5,12 @@ import ReactDOM from 'react-dom';
 import App from './containers/App';
 import {combineReducers, createStore} from 'redux';
 import {Provider} from 'react-redux';
+import fieldReducer from './containers/fieldReducer';
 import './dist/css/default.css';
 
 const reducers = combineReducers({
-    app: () => ({value: 'Opa'})
+    app: fieldReducer
 });
-
 
 ReactDOM.render(
     <Provider store={createStore(reducers)}>
