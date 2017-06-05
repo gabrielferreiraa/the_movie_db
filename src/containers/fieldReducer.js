@@ -1,10 +1,10 @@
-const INITIAL_STATE = {value: 'Opa'};
+const INITIAL_STATE = { value: 'Opa' };
 
 export default (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case 'VALUE_CHANGED':
-            return {value: action.payload};
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+    case 'VALUE_CHANGED':
+      return { value: action.payload };
+    default:
+      return state;
+  }
+};

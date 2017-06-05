@@ -10,12 +10,12 @@ const extractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = validate({
   entry: [
     'babel-polyfill',
-    path.join(__dirname, 'src', 'index'),
+    path.join(__dirname, 'src', 'index')
   ],
 
   output: {
     path: path.join(__dirname, 'docs'),
-    filename: '[name]-[hash].js',
+    filename: '[name]-[hash].js'
   },
 
   plugins: [

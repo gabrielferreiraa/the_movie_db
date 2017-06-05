@@ -4,8 +4,8 @@ const path = require('path');
 const webpack = require('webpack');
 const validate = require('webpack-validator');
 
-const htmlPlugin = require('html-webpack-plugin');
-const extractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = validate({
@@ -27,10 +27,10 @@ module.exports = validate({
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new extractTextPlugin('[name]-[hash].css'),
+    new ExtractTextPlugin('[name]-[hash].css'),
     new DashboardPlugin(),
 
-    new htmlPlugin({
+    new HtmlPlugin({
       title: 'API Movie DB',
       template: path.join(__dirname, 'src', 'template.html')
     })
