@@ -68,7 +68,10 @@ module.exports = validate({
       components: path.join(__dirname, 'src', 'components'),
       containers: path.join(__dirname, 'src', 'containers'),
       utils: path.join(__dirname, 'src', 'utils'),
-      dist: path.join(__dirname, 'src', 'dist')
+      dist: path.join(__dirname, 'src', 'dist'),
+      constants: path.join(__dirname, 'src', 'constants'),
+      reducers: path.join(__dirname, 'src', 'reducers'),
+      actions: path.join(__dirname, 'src', 'actions')
     }
   }
 });

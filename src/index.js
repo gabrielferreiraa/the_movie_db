@@ -2,18 +2,17 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './containers/Counter';
-import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import counterReducer from './containers/counterReducer';
+import { createStore } from 'redux';
+
+import App from 'containers/App';
+import { DEV_TOOLS } from 'constants/configConstants';
+import globalReducers from 'reducers/GlobalReducers';
+
 import './dist/css/default.css';
 
-const reducers = combineReducers({
-  counter: counterReducer
-});
-
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
-    <Counter />
+  <Provider store={createStore(globalReducers, DEV_TOOLS)}>
+    <App />
   </Provider>
   , document.querySelector('[data-js="app"]'));
