@@ -10,7 +10,7 @@ export const movieSearched = name => {
   return {
     type: MOVIE_SEARCHED,
     payload: movies
-  }
+  };
 };
 
 export const nameChanged = e => ({ type: NAME_CHANGED, payload: e.target.value });

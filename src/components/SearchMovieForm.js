@@ -14,7 +14,7 @@ class SearchMovieForm extends Component {
   render () {
     return (
       <div>
-        <input type='text' onChange={this.props.nameChanged} value={this.props.name}/>
+        <input type='text' onChange={this.props.nameChanged} value={this.props.name} />
         <button onClick={() => this.props.movieSearched(this.props.name)}>Buscar</button>
       </div>
     );
