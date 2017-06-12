@@ -9,19 +9,25 @@ import { itemRemove } from 'actions/SearchMovieListActions';
 class SearchMovieList extends Component {
   constructor (props) {
     super(props);
+
+    this._renderMovies = this._renderMovies.bind(this);
+  }
+
+  _renderMovies () {
+    const movies = this.props.list || [];
+
+    return typeof movies.results === 'undefined' ? false : movies.results.map((movie, index) =>
+      <li key={index}>
+        {movie.original_title}
+      </li>
+    );
   }
 
   render () {
-    const list = this.props.list || [];
     return (
       <div>
         <ul>
-          {list.map((item, index) =>
-            <li key={index}>
-              {item.name}
-              <a href='#' onClick={() => this.props.itemRemove(item)} >X</a>
-            </li>
-          )}
+          {this._renderMovies()}
         </ul>
       </div>
     );
