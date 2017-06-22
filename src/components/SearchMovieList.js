@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { itemRemove } from 'actions/SearchMovieListActions';
+import { movieDetail } from 'actions/SearchMovieListActions';
+import { IMG_URL } from 'constants/configConstants';
 
 class SearchMovieList extends Component {
   constructor (props) {
@@ -17,24 +18,26 @@ class SearchMovieList extends Component {
     const movies = this.props.list || [];
 
     return typeof movies.results === 'undefined' ? false : movies.results.map((movie, index) =>
-      <li key={index}>
-        {movie.original_title}
-      </li>
+      <div>
+        <h2>{movie.original_title}</h2>
+        <h3>Grade: {movie.vote_average}</h3>
+        <small>{movie.overview}</small>
+        <button onClick={() => this.props.movieDetail(movie)}>Detalhes</button>
+        <hr/>
+      </div>
     );
   }
 
   render () {
     return (
       <div>
-        <ul>
-          {this._renderMovies()}
-        </ul>
+        {this._renderMovies()}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({ list: state.app.list });
-const mapDispatchToProps = dispatch => bindActionCreators({ itemRemove }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ movieDetail }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchMovieList);

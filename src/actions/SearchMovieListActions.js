@@ -1,6 +1,8 @@
 'use strict';
 
-export const itemRemove = item => ({
-  type: 'ITEM_REMOVED',
-  payload: item
+import { MOVIE_DETAIL } from 'constants/SearchMovieConstants';
+
+export const movieDetail = movie => ({
+  type: MOVIE_DETAIL,
+  payload: movie
 });
