@@ -16,12 +16,13 @@ class SearchMovieForm extends Component {
       <div>
         <input type='text' onChange={this.props.nameChanged} value={this.props.name} />
         <button onClick={() => this.props.movieSearched(this.props.name)}>Buscar</button>
+        <h1>{this.props.isFetching ? 'carregando...' : ''}</h1>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({ name: state.app.name });
+const mapStateToProps = state => ({ name: state.app.name, isFetching: state.app.isFetching });
 const mapDispatchToProps = dispatch => bindActionCreators({ nameChanged, movieSearched }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchMovieForm);
