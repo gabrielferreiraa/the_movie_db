@@ -1,0 +1,44 @@
+.asideDetails {
+    position: fixed;
+    width: 600px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: #CCC;
+    transform: translateX(100%);
+    transition: transform 150ms ease;
+}
+
+.backdropImage {
+    width: 100%;
+    object-fit: cover;
+    height: 220px;
+    transition: height 200ms ease;
+    margin-bottom: 10px;
+}
+
+.backdropImage:hover {
+    height: 300px;
+}
+
+.genres {
+    margin-top: 10px;
+    display: block;
+}
+
+.genres span {
+    padding: 10px;
+    background-color: #666;
+    margin-right: 5px;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.opened {
+    transform: translateX(0);
+}
+
+.movieTitle {
+    color: #666;
+    composes: fontFamily from 'dist/css/default.css';
+}

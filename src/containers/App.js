@@ -3,13 +3,13 @@
 import React from 'react';
 import SearchMovieForm from 'components/SearchMovieForm';
 import SearchMovieList from 'components/SearchMovieList';
-import SearchMovieDetails from 'components/SearchMovieDetails';
+import AsideDetails from 'components/AsideDetails';
 
 const App = () => (
   <div>
     <SearchMovieForm />
     <SearchMovieList />
-    <SearchMovieDetails />
+    <AsideDetails />
   </div>
 );
 

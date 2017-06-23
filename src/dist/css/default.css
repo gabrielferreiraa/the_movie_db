@@ -1,5 +1,10 @@
-* {
+.fontFamily {
     font-family: 'Lato-Regular', sans-serif;
+    font-weight: normal;
+}
+
+.fontFamilyItalic {
+    font-family: 'Lato-Bold', sans-serif;
     font-weight: normal;
 }
 
