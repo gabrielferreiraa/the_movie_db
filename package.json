@@ -4,7 +4,7 @@
     "lint": "semistandard --verbose | snazzy",
     "lint:fix": "semistandard --fix",
     "lint:watch": "gulp",
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p",
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
     "storybook": "start-storybook -p 9001 -c storybook",
     "build-storybook": "build-storybook -c storybook"
   },
@@ -55,6 +55,8 @@
     "react-search-input": "^0.10.4",
     "react-swipeable-views": "^0.11.1",
     "react-tap-event-plugin": "^2.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
     "vanilla-masker": "^1.1.1"
   },
   "semistandard": {

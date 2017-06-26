@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,700,700i');
 
-body {
-    background: #30E8BF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FF8235, #30E8BF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FF8235, #30E8BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+/*body {*/
+    /*background: #30E8BF;  !* fallback for old browsers *!*/
+    /*background: -webkit-linear-gradient(to right, #FF8235, #30E8BF);  !* Chrome 10-25, Safari 5.1-6 *!*/
+    /*background: linear-gradient(to right, #FF8235, #30E8BF); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+/*}*/
 
 .fontFamily {
     font-family: 'Raleway', sans-serif;
