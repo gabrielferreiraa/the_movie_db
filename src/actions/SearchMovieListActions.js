@@ -10,5 +10,5 @@ export const movieDetail = movie => {
   return {
     type: MOVIE_DETAIL,
     payload: details
-  }
+  };
 };

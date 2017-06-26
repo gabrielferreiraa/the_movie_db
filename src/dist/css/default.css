@@ -1,47 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,700,700i');
+
+body {
+    background: #30E8BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF8235, #30E8BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF8235, #30E8BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .fontFamily {
-    font-family: 'Lato-Regular', sans-serif;
-    font-weight: normal;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
 }
 
 .fontFamilyItalic {
-    font-family: 'Lato-Bold', sans-serif;
-    font-weight: normal;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.fontFamilyBold {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
 }
 
 input {
-    font-family: 'Lato-Regular', sans-serif !important;
-    font-weight: normal !important;
-}
-
-@font-face {
-    font-family: 'Lato-Regular';
-    src: url('../fonts/hinted-Lato-Regular.eot');
-    src: local('Lato Regular'), local('Lato-Regular'),
-    url('../fonts/hinted-Lato-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/hinted-Lato-Regular.woff') format('woff'),
-    url('../fonts/hinted-Lato-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Lato-Bold';
-    src: url('../fonts/hinted-Lato-Bold.eot');
-    src: local('Lato Bold'), local('Lato-Bold'),
-    url('../fonts/hinted-Lato-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/hinted-Lato-Bold.woff') format('woff'),
-    url('../fonts/hinted-Lato-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Lato-Light';
-    src: url('../fonts/hinted-Lato-Light.eot');
-    src: local('Lato-Light'),
-    url('../fonts/hinted-Lato-Light.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/hinted-Lato-Light.woff') format('woff'),
-    url('../fonts/hinted-Lato-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 400 !important;
 }

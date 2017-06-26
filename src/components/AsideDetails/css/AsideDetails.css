@@ -40,5 +40,5 @@
 
 .movieTitle {
     color: #666;
-    composes: fontFamily from 'dist/css/default.css';
+    composes: fontFamilyBold from 'dist/css/default.css';
 }

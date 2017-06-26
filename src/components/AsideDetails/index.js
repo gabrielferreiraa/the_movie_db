@@ -25,7 +25,7 @@ class SearchMovieList extends Component {
           this.props.open ? style.opened : false
         ].join(' ')}>
         <button onClick={() => this.props.closedAside()}>X</button>
-        <img src={IMG_URL + currentMovie.backdrop_path} className={style.backdropImage}/>
+        <img src={IMG_URL + currentMovie.backdrop_path} className={style.backdropImage} />
         <h1 className={style.movieTitle}>{currentMovie.original_title}</h1>
         <small>{currentMovie.overview}</small>
         <Genres genres={currentMovie.genres} />

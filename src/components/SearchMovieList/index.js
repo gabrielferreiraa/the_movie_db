@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 import { movieDetail } from 'actions/SearchMovieListActions';
 import { IMG_URL } from 'constants/configConstants';
 import { splitDate } from 'utils';
-import style from './css/SearchMovieForm.css';
+import style from './css/SearchMovieList.css';
+import { fontFamilyBold } from 'dist/css/default.css';
 
 class SearchMovieList extends Component {
   constructor (props) {
@@ -21,11 +22,11 @@ class SearchMovieList extends Component {
 
     return typeof movies.results === 'undefined' ? false : movies.results.map((movie, index) =>
       <div key={index} className={style.box}>
-        <h2>{movie.original_title}</h2>
+        <img src={IMG_URL + movie.poster_path} className={style.imageFolder} />
+        <button onClick={() => this.props.movieDetail(movie)} className={`${style.btnShowMore}`}>SHOW MORE</button>
+        <h2 className={ fontFamilyBold }>{movie.original_title}</h2>
         <h3>Grade: {movie.vote_average}</h3>
         <h3>{splitDate(movie.release_date, 0)}</h3>
-        <img src={IMG_URL + movie.poster_path} className={style.imageFolder} />
-        <button onClick={() => this.props.movieDetail(movie)}>Detalhes</button>
       </div>
     );
   }
