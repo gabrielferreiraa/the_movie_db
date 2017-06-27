@@ -28,13 +28,17 @@ module.exports = validate({
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('[name]-[hash].css'),
     new DashboardPlugin(),
-
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    }),
     new HtmlPlugin(common.htmlPluginConfig)
   ],
 
   module: {
-    rules: [
-      common.semistandardPreLoader,
+    preLoaders: [
+      common.semistandardPreLoader
+    ],
+    loaders: [
       common.jsLoader,
       common.cssLoader
     ]

@@ -24,7 +24,7 @@ class SearchMovieList extends Component {
       <div key={index} className={style.box}>
         <img src={IMG_URL + movie.poster_path} className={style.imageFolder} />
         <button onClick={() => this.props.movieDetail(movie)} className={`${style.btnShowMore}`}>SHOW MORE</button>
-        <h2 className={ fontFamilyBold }>{movie.original_title}</h2>
+        <h2 className={fontFamilyBold}>{movie.original_title.toUpperCase()}</h2>
         <h3>Grade: {movie.vote_average}</h3>
         <h3>{splitDate(movie.release_date, 0)}</h3>
       </div>

@@ -18,7 +18,13 @@ module.exports = {
 
   output: {
     path: paths.docs,
-    filename: '[name]-[hash].js',
+    filename: '[name]-[hash].js'
+  },
+
+  uglifyJsPluginConfig: {
+    compress: {
+      warnings: false
+    }
   },
 
   htmlPluginConfig: {
@@ -28,38 +34,22 @@ module.exports = {
 
   semistandardPreLoader: {
     test: /\.js$/,
+    exclude: /node_modules/,
     include: paths.src,
-    use: {
-      loader: 'semistandard',
-      options: {
-        parser: 'babel-eslint'
-      }
-    }
+    loader: 'semistandard'
   },
 
   jsLoader: {
     test: /\.js$/,
+    exclude: /node_modules/,
     include: paths.src,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: [['env', { modules: false }], 'stage-0', 'react'],
-        plugins: [
-          'react-hot-loader/babel',
-          ['transform-runtime', {
-            helpers: false,
-            polyfill: false,
-            regenerator: true
-          }]
-        ]
-      }
-    }
+    loader: 'babel'
   },
 
   cssLoader: {
     test: /\.css$/,
     include: paths.src,
-    use: ['style', 'css?modules']
+    loaders: [ 'style', 'css?modules' ]
   },
 
   resolve: {
@@ -72,6 +62,7 @@ module.exports = {
       constants: join(paths.src, 'constants'),
       reducers: join(paths.src, 'reducers'),
       actions: join(paths.src, 'actions'),
+      stores: join(paths.src, 'stores')
     }
   }
 };

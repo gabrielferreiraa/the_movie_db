@@ -1,8 +1,6 @@
 'use strict';
 
 import React from 'react';
-
-import { closedAside } from 'actions/AsideDetailsActions';
 import style from './css/AsideDetails.css';
 
 const renderGenres = genres => (

@@ -5,3 +5,4 @@ nbproject
 /docs/*
 /coverage/*
 npm-debug.log
+yarn.lock
