@@ -5,7 +5,7 @@ import { API_URL, POPULAR_URL } from 'constants/configConstants';
 import { MOVIE_SEARCHED, NAME_CHANGED } from 'constants/SearchMovieConstants';
 
 export const movieSearched = name => {
-  const urlSearched = !!name ? `${API_URL}&query=${name}` : POPULAR_URL;
+  const urlSearched = name ? `${API_URL}&query=${name}` : POPULAR_URL;
 
   const movies = axios.get(urlSearched);
 

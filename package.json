@@ -28,7 +28,6 @@
     "redux": "3.6.0",
     "redux-actions": "^2.0.3",
     "redux-promise": "0.5.3",
-    "sass-loader": "^6.0.3",
     "semistandard": "^9.2.1",
     "semistandard-loader": "0.0.4",
     "snazzy": "^7.0.0",
