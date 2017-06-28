@@ -1,38 +1,31 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React  from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import { closedAside } from 'actions/AsideDetailsActions';
-import Genres from 'components/AsideDetails/Genres';
-
 import { IMG_URL } from 'constants/configConstants';
+import ContentDetail from 'components/AsideDetails/ContentDetail';
+
 import style from './css/AsideDetails.css';
 
-class SearchMovieList extends Component {
-  constructor (props) {
-    super(props);
-  }
+const AsideDetails = (props) => {
+  const currentMovie = props.currentMovie || {};
 
-  render () {
-    const currentMovie = this.props.currentMovie || {};
-
-    return (
-      <aside
-        className={[
-          style.asideDetails,
-          this.props.open ? style.opened : false
-        ].join(' ')}>
-        <button onClick={() => this.props.closedAside()}>X</button>
-        <img src={IMG_URL + currentMovie.backdrop_path} className={style.backdropImage} />
-        <h1 className={style.movieTitle}>{currentMovie.original_title}</h1>
-        <small>{currentMovie.overview}</small>
-        <Genres genres={currentMovie.genres} />
-      </aside>
-    );
-  }
-}
+  return (
+    <aside
+      className={[
+        style.asideDetails,
+        props.open ? style.opened : false
+      ].join(' ')}>
+      <img src={IMG_URL + currentMovie.backdrop_path} className={style.backgroundBlur}/>
+      <ContentDetail
+        currentMovie={currentMovie}
+        closedAside={props.closedAside}
+      />
+    </aside>
+  );
+};
 
 const mapStateToProps = state => ({
   open: state.app.open,
@@ -40,4 +33,4 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => bindActionCreators({ closedAside }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchMovieList);
+export default connect(mapStateToProps, mapDispatchToProps)(AsideDetails);

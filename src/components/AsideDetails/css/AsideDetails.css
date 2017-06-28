@@ -4,9 +4,38 @@
     height: 100%;
     right: 0;
     top: 0;
-    background: #CCC;
     transform: translateX(100%);
     transition: transform 150ms ease;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: 4px -4px 5px 6px #000;
+    background: #000;
+}
+
+.backgroundBlur {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px) grayscale(70%);
+    z-index: 1;
+    position: fixed;
+}
+
+.year {
+    color: #FFF;
+    composes: fontFamilyBold from 'dist/css/default.css';
+    font-size: .9em;
+    text-align: center;
+    margin: 5px 0 20px;
+}
+
+.content {
+    position: fixed;
+    z-index: 9999;
+}
+
+.content:hover .backdropImage {
+    height: 300px;
 }
 
 .backdropImage {
@@ -17,21 +46,32 @@
     margin-bottom: 10px;
 }
 
-.backdropImage:hover {
-    height: 300px;
+.description {
+    margin: 10px;
+}
+
+.description small {
+    color: #FFF;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
 }
 
 .genres {
-    margin-top: 10px;
+    margin: 30px 10px;
     display: block;
 }
 
 .genres span {
-    padding: 10px;
+    padding: 5px;
     background-color: #666;
     margin-right: 5px;
     border-radius: 20px;
     color: #FFF;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: .8em;
+    border: 1px solid rgba(0, 0, 0, .1);
 }
 
 .opened {
@@ -39,6 +79,10 @@
 }
 
 .movieTitle {
-    color: #666;
+    color: #FFF;
     composes: fontFamilyBold from 'dist/css/default.css';
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0
 }

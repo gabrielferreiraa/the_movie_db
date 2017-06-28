@@ -35,7 +35,7 @@
     "webpack": "^1.14.0",
     "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "^1.16.2",
-    "webpack-validator": "^2.3.0"
+    "webpack-validator": "^3.0.0"
   },
   "dependencies": {
     "axios": "^0.15.3",

@@ -8,7 +8,7 @@ import { fontFamilyBold } from 'dist/css/default.css';
 
 const BoxMovie = ({ movie, handleDetail }) =>
   <div className={style.box}>
-    <img src={IMG_URL + movie.poster_path} className={style.imageFolder}/>
+    <img src={IMG_URL + movie.poster_path} className={style.imageFolder} />
     <button onClick={handleDetail} className={style.btnShowMore}>SHOW MORE</button>
     <h2 className={fontFamilyBold}>{movie.original_title.toUpperCase()}</h2>
     <h3>Grade: {movie.vote_average}</h3>
