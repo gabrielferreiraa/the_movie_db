@@ -1,6 +1,6 @@
 'use strict';
 
-import React  from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { closedAside } from 'actions/AsideDetailsActions';
@@ -18,7 +18,7 @@ const AsideDetails = (props) => {
         style.asideDetails,
         props.open ? style.opened : false
       ].join(' ')}>
-      <img src={IMG_URL + currentMovie.backdrop_path} className={style.backgroundBlur}/>
+      <img src={IMG_URL + currentMovie.backdrop_path} className={style.backgroundBlur} />
       <ContentDetail
         currentMovie={currentMovie}
         closedAside={props.closedAside}

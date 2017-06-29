@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import style from './css/SearchMovieForm.css';
 
 import { nameChanged, movieSearched } from 'actions/SearchMovieFormActions';
 
@@ -11,11 +12,20 @@ class SearchMovieForm extends Component {
     super(props);
   }
 
+  componentWillMount () {
+    this.props.movieSearched();
+  }
+
   render () {
     return (
       <div>
-        <input type='text' onChange={this.props.nameChanged} value={this.props.name} />
-        <button onClick={() => this.props.movieSearched(this.props.name)}>Buscar</button>
+        <h1 className={style.title}>THE MOVIE DB</h1>
+        <div className={style.inputGroup}>
+          <input type='text' onChange={this.props.nameChanged} value={this.props.name} title='Press Enter' placeholder='Populars' />
+          <button onClick={() => this.props.movieSearched(this.props.name)} className={style.btnSearch}>
+            <i className='fa fa-search' />
+          </button>
+        </div>
       </div>
     );
   }

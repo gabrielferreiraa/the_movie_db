@@ -3,7 +3,7 @@
 import { handleActions } from 'redux-actions';
 import * as types from 'constants/SearchMovieConstants';
 
-const INITIAL_STATE = { name: 'Avengers', list: [], currentMovie: [], open: false };
+const INITIAL_STATE = { name: '', list: [], currentMovie: [], open: false };
 
 const handlers = {
   [types.NAME_CHANGED]: (state, action) => ({ ...state, name: action.payload, open: false }),

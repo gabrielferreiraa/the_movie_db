@@ -1,14 +1,42 @@
 .box {
-    border: 1px solid rgba(0, 0, 0, .2);
     width: 200px;
     margin: 5px;
     position: relative;
-    display: inline-block;
+    background: rgba(0, 0, 0, .5);
+    border: 1px solid #FFF;
+    cursor: pointer;
+    transition: opacity 200ms ease;
+}
+
+.box:hover {
+    opacity: .4;
+}
+
+.movieTitle {
+    text-align: center;
+    color: #FFF;
+    font-size: 1.2em;
+    composes: fontFamilyBold from 'dist/css/default.css';
+    max-height: 100px;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    text-transform: uppercase;
+}
+
+.moviesSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .imageFolder {
     width: 100%;
-    margin-bottom: 35px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .btnShowMore {

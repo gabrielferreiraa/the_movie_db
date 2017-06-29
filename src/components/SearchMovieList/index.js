@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
+import style from './css/SearchMovieList.css';
 
 import BoxMovie from './BoxMovie';
 import { movieDetail } from 'actions/SearchMovieListActions';
@@ -29,7 +30,7 @@ class SearchMovieList extends Component {
 
   render () {
     return (
-      <div>
+      <div className={style.moviesSection}>
         {this._renderMovies()}
         <ReactLoading type='cylon' color='#444' />
       </div>

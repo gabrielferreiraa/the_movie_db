@@ -4,11 +4,11 @@
     height: 100%;
     right: 0;
     top: 0;
-    transform: translateX(100%);
+    transform: translateX(110%);
     transition: transform 150ms ease;
     overflow: hidden;
     border-radius: 0;
-    box-shadow: 4px -4px 5px 6px #000;
+    box-shadow: 4px -4px 10px 3px #000;
     background: #000;
 }
 
@@ -85,4 +85,10 @@
     text-align: center;
     font-size: 1.5em;
     margin: 0
+}
+
+@media screen and (max-width: 768px) {
+    .asideDetails {
+        width: 100%;
+    }
 }
