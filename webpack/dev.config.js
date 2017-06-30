@@ -7,6 +7,8 @@ const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
+process.noDeprecation = true;
+
 module.exports = {
   devtool: 'source-map',
 

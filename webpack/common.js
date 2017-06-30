@@ -68,7 +68,7 @@ module.exports = {
   cssLoader: {
     test: /\.css$/,
     include: paths.src,
-    use: ['style-loader', 'css?modules']
+    use: ['style-loader', 'css-loader?modules']
   },
 
   resolve: {
