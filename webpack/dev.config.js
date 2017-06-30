@@ -2,13 +2,14 @@
 
 const webpack = require('webpack');
 const common = require('./common');
-const validate = require('webpack-validator');
 
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
-module.exports = validate({
+process.noDeprecation = true;
+
+module.exports = {
   devtool: 'source-map',
 
   entry: [
@@ -35,14 +36,12 @@ module.exports = validate({
   ],
 
   module: {
-    preLoaders: [
-      common.semistandardPreLoader
-    ],
-    loaders: [
+    rules: [
+      common.semistandardPreLoader,
       common.jsLoader,
       common.cssLoader
     ]
   },
 
   resolve: common.resolve
-});
+};

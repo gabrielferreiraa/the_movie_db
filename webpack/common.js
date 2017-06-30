@@ -33,23 +33,42 @@ module.exports = {
   },
 
   semistandardPreLoader: {
+    enforce: 'pre',
     test: /\.js$/,
     exclude: /node_modules/,
     include: paths.src,
-    loader: 'semistandard'
+    use: {
+      loader: 'semistandard-loader',
+      options: {
+        parser: 'babel-eslint'
+      }
+    }
   },
 
   jsLoader: {
     test: /\.js$/,
-    exclude: /node_modules/,
     include: paths.src,
-    loader: 'babel'
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [[
+          'env', { modules: false }], 'stage-0', 'react'],
+        plugins: [
+          'react-hot-loader/babel',
+          ['transform-runtime', {
+            helpers: false,
+            polyfill: false,
+            regenerator: true
+          }]
+        ]
+      }
+    }
   },
 
   cssLoader: {
     test: /\.css$/,
     include: paths.src,
-    loaders: [ 'style', 'css?modules' ]
+    use: ['style-loader', 'css-loader?modules']
   },
 
   resolve: {
