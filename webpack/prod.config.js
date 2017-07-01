@@ -2,12 +2,11 @@
 
 const webpack = require('webpack');
 const common = require('./common');
-const validate = require('webpack-validator');
 
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = validate({
+module.exports = {
   entry: [
     'babel-polyfill',
     common.entry.main
@@ -29,14 +28,12 @@ module.exports = validate({
   ],
 
   module: {
-    preLoaders: [
-      common.semistandardPreLoader
-    ],
-    loaders: [
+    rules: [
+      common.semistandardPreLoader,
       common.jsLoader,
       common.cssLoader
     ]
   },
 
   resolve: common.resolve
-});
+};

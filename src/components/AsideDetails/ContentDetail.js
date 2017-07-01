@@ -8,7 +8,7 @@ import { IMG_URL } from 'constants/configConstants';
 
 import style from './css/AsideDetails.css';
 
-const ContentDetail = ({ currentMovie, closedAside }) => (
+const ContentDetail = ({ currentMovie, closedAside, handleError }) => (
   <section className={style.content}>
     <CloseButton
       handleClick={closedAside}
@@ -16,7 +16,11 @@ const ContentDetail = ({ currentMovie, closedAside }) => (
     <img
       src={IMG_URL + currentMovie.backdrop_path}
       className={style.backdropImage}
+      onError={handleError}
     />
+    <small className={style.tagline}>
+      {currentMovie.tagline}
+    </small>
     <Descriptive
       title={currentMovie.original_title}
       description={currentMovie.overview}

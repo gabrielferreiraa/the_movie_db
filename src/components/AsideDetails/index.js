@@ -11,6 +11,10 @@ import style from './css/AsideDetails.css';
 
 const AsideDetails = (props) => {
   const currentMovie = props.currentMovie || {};
+  console.log(currentMovie);
+  const handleError = e => {
+    e.target.src = 'http://selnd.com/2tziEWH';
+  };
 
   return (
     <aside
@@ -18,11 +22,23 @@ const AsideDetails = (props) => {
         style.asideDetails,
         props.open ? style.opened : false
       ].join(' ')}>
-      <img src={IMG_URL + currentMovie.backdrop_path} className={style.backgroundBlur} />
+      <img src={IMG_URL + currentMovie.backdrop_path} className={style.backgroundBlur} onError={handleError}/>
       <ContentDetail
         currentMovie={currentMovie}
         closedAside={props.closedAside}
+        handleError={handleError}
       />
+      <small className={style.avarage}>
+        {`${currentMovie.vote_average}/10`}
+        <i className='fa fa-star' style={{ color: 'yellow' }}/>
+      </small>
+      <small className={style.avarage}>
+        {`${currentMovie.vote_count} reviews`}
+      </small>
+      {currentMovie.homepage && <a href={currentMovie.homepage} target='_blank' className={style.visitHomePage}>
+        <i className='fa fa-desktop '/>
+        Visit Home Page
+      </a>}
     </aside>
   );
 };

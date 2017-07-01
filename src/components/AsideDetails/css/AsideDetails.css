@@ -30,7 +30,7 @@
 }
 
 .content {
-    position: fixed;
+    position: relative;
     z-index: 9999;
 }
 
@@ -85,6 +85,59 @@
     text-align: center;
     font-size: 1.5em;
     margin: 0
+}
+
+.avarage {
+    color: #FFF;
+    font-family: 'Rubik', sans-serif;
+    margin: 10px;
+    position: relative;
+    z-index: 999;
+}
+
+.avarage i {
+    margin-left: 5px;
+}
+
+.tagline {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin: 10px;
+    color: #FFF;
+    bottom: 50%;
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+}
+
+.visitHomePage {
+    position: absolute;
+    z-index: 999;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: #FFF;
+    border-radius: 5px;
+    font-family: 'Rubik', sans-serif;
+    border: 1px solid #FFF;
+    float: right;
+    transition: 200ms;
+    width: 150px;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-75px);
+
+}
+
+.visitHomePage:hover {
+    background: rgba(0, 0, 0, .3);
+    color: #FFF;
+}
+
+.visitHomePage i {
+    margin: 5px;
 }
 
 @media screen and (max-width: 768px) {
