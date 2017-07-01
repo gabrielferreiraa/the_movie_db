@@ -144,4 +144,17 @@
     .asideDetails {
         width: 100%;
     }
+
+    .visitHomePage {
+        text-decoration: none;
+        border-radius: 0;
+        border: inherit;
+        position: fixed;
+        text-align: center;
+        left: 0;
+        margin: 0;
+        bottom: -1px;
+        width: 100%;
+        transform: inherit;
+    }
 }

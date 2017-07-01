@@ -22,7 +22,7 @@ const AsideDetails = (props) => {
         style.asideDetails,
         props.open ? style.opened : false
       ].join(' ')}>
-      <img src={IMG_URL + currentMovie.backdrop_path} className={style.backgroundBlur} onError={handleError}/>
+      <img src={IMG_URL + currentMovie.backdrop_path} className={style.backgroundBlur} onError={handleError} />
       <ContentDetail
         currentMovie={currentMovie}
         closedAside={props.closedAside}
@@ -30,13 +30,13 @@ const AsideDetails = (props) => {
       />
       <small className={style.avarage}>
         {`${currentMovie.vote_average}/10`}
-        <i className='fa fa-star' style={{ color: 'yellow' }}/>
+        <i className='fa fa-star' style={{ color: 'yellow' }} />
       </small>
       <small className={style.avarage}>
         {`${currentMovie.vote_count} reviews`}
       </small>
       {currentMovie.homepage && <a href={currentMovie.homepage} target='_blank' className={style.visitHomePage}>
-        <i className='fa fa-desktop '/>
+        <i className='fa fa-desktop ' />
         Visit Home Page
       </a>}
     </aside>

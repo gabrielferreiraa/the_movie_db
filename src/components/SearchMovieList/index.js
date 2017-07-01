@@ -32,7 +32,6 @@ class SearchMovieList extends Component {
     return (
       <div className={style.moviesSection}>
         {this._renderMovies()}
-        <ReactLoading type='cylon' color='#444' />
       </div>
     );
   }

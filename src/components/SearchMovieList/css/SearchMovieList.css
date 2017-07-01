@@ -46,3 +46,13 @@
     left: 0;
     bottom: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .box {
+        font-size: 8px;
+        width: 100px;
+    }
+    .imageFolder {
+        height: 150px;
+    }
+}
