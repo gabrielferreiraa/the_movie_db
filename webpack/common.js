@@ -66,12 +66,28 @@ module.exports = {
   },
 
   cssLoader: {
-    test: /\.css$/,
+    test: /\.(css|styl)$/,
     include: paths.src,
-    use: ['style-loader', 'css-loader?modules']
+    use: [
+      'style-loader', {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          localIdentName: '[path][name]__[local]--[hash:base64:5]'
+        }
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: true
+        }
+      },
+      'stylus-loader'
+    ]
   },
 
   resolve: {
+    extensions: ['.js', '.json', '.styl', '.css'],
     alias: {
       src: paths.src,
       components: join(paths.src, 'components'),
@@ -81,7 +97,8 @@ module.exports = {
       constants: join(paths.src, 'constants'),
       reducers: join(paths.src, 'reducers'),
       actions: join(paths.src, 'actions'),
-      stores: join(paths.src, 'stores')
+      stores: join(paths.src, 'stores'),
+      css: join(paths.dist, 'css')
     }
   }
 };

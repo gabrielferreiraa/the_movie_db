@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import style from './css/AsideDetails.css';
+import style from './css/AsideDetails';
 
 const renderGenres = genres => (
   <div className={style.genres}>

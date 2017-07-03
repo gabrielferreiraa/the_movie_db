@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { PropTypes } from 'react';
-import style from './css/closeButton.css';
+import style from './css/closeButton';
 
 const CloseButton = ({ handleClick }) => (
   <button

@@ -7,11 +7,11 @@ import { closedAside } from 'actions/AsideDetailsActions';
 import { IMG_URL } from 'constants/configConstants';
 import ContentDetail from 'components/AsideDetails/ContentDetail';
 
-import style from './css/AsideDetails.css';
+import style from './css/AsideDetails';
 
 const AsideDetails = (props) => {
   const currentMovie = props.currentMovie || {};
-  console.log(currentMovie);
+
   const handleError = e => {
     e.target.src = 'http://selnd.com/2tziEWH';
   };

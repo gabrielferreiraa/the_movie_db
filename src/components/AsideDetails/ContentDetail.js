@@ -6,7 +6,7 @@ import Descriptive from 'components/AsideDetails/Descriptive';
 import CloseButton from 'components/CloseButton';
 import { IMG_URL } from 'constants/configConstants';
 
-import style from './css/AsideDetails.css';
+import style from './css/AsideDetails';
 
 const ContentDetail = ({ currentMovie, closedAside, handleError }) => (
   <section className={style.content}>
