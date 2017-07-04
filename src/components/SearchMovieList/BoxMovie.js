@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { PropTypes } from 'react';
-import style from './css/SearchMovieList.css';
+import style from './css/SearchMovieList';
 import { IMG_URL } from 'constants/configConstants';
 
 const BoxMovie = ({ movie, handleDetail }) => {

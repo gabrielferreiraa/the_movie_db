@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
-import style from './css/SearchMovieList.css';
+import style from './css/SearchMovieList';
 
 import BoxMovie from './BoxMovie';
 import { movieDetail } from 'actions/SearchMovieListActions';

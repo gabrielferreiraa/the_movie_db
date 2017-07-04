@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import style from './css/SearchMovieForm.css';
+import style from './css/SearchMovieForm';
 
 import { nameChanged, movieSearched } from 'actions/SearchMovieFormActions';
 

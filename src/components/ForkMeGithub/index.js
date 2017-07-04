@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import style from './css/ForkMeGithub.css';
+import style from './css/ForkMeGithub';
 
 const ForkMeGithub = () => (
   <a className={style.githubCorner} href='https://github.com/gabrielferreiraa/api_movie' title='Fork me on GitHub'

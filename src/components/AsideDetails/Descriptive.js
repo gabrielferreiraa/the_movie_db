@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 import { splitDate } from 'utils';
 import style from './css/AsideDetails';
 
-const Descriptive = (props) => {
+const Descriptive = props => {
   const { title, description, date } = props;
 
   return (
