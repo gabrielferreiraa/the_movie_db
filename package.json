@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "webpack-dashboard -- node server.js",
+    "dev": "webpack-dashboard -- node server.js",
     "lint": "standard --parser babel-eslint --verbose | snazzy",
     "lint:fix": "standard --fix",
     "lint:watch": "gulp",
@@ -30,7 +30,9 @@
     "react-scripts": "^0.9.2",
     "redux": "3.6.0",
     "redux-actions": "^2.0.3",
+    "redux-multi": "^0.1.12",
     "redux-promise": "0.5.3",
+    "redux-thunk": "^2.2.0",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2",
     "standard-loader": "^6.0.1",

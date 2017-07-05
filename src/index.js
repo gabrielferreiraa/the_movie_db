@@ -3,7 +3,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import './dist/css/default.css'
+import 'css/default.css'
 
 import App from 'containers/App'
 import { configureStore } from 'stores/configureStore'

@@ -1,7 +1,9 @@
 import { applyMiddleware, createStore } from 'redux'
-import promise from 'redux-promise'
 import globalReducers from 'reducers/GlobalReducers'
+import multi from 'redux-multi'
+import thunk from 'redux-thunk'
+import promise from 'redux-promise'
 
 export function configureStore () {
-  return applyMiddleware(promise)(createStore)(globalReducers)
+  return applyMiddleware(thunk, multi, promise)(createStore)(globalReducers)
 }
