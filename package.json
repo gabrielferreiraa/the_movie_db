@@ -1,8 +1,8 @@
 {
   "scripts": {
     "start": "webpack-dashboard -- node server.js",
-    "lint": "semistandard --verbose | snazzy",
-    "lint:fix": "semistandard --fix",
+    "lint": "standard --parser babel-eslint --verbose | snazzy",
+    "lint:fix": "standard --fix",
     "lint:watch": "gulp",
     "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
     "storybook": "start-storybook -p 9001 -c storybook",
@@ -31,13 +31,12 @@
     "redux": "3.6.0",
     "redux-actions": "^2.0.3",
     "redux-promise": "0.5.3",
-    "semistandard": "^9.2.1",
-    "semistandard-loader": "0.0.4",
     "snazzy": "^7.0.0",
+    "standard": "^10.0.2",
+    "standard-loader": "^6.0.1",
     "style-loader": "^0.13.1",
     "webpack": "2.2.1",
-    "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dashboard": "^0.3.0"
   },
   "dependencies": {
     "axios": "^0.15.3",

@@ -1,20 +1,20 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { closedAside } from 'actions/AsideDetailsActions';
-import { IMG_URL } from 'constants/configConstants';
-import ContentDetail from 'components/AsideDetails/ContentDetail';
+import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { closedAside } from 'actions/AsideDetailsActions'
+import { IMG_URL } from 'constants/configConstants'
+import ContentDetail from 'components/AsideDetails/ContentDetail'
 
-import style from './css/AsideDetails';
+import style from './css/AsideDetails'
 
 const AsideDetails = (props) => {
-  const currentMovie = props.currentMovie || {};
+  const currentMovie = props.currentMovie || {}
 
   const handleError = e => {
-    e.target.src = 'http://selnd.com/2tziEWH';
-  };
+    e.target.src = 'http://selnd.com/2tziEWH'
+  }
 
   return (
     <aside
@@ -40,13 +40,13 @@ const AsideDetails = (props) => {
         Visit Home Page
       </a>}
     </aside>
-  );
-};
+  )
+}
 
 const mapStateToProps = state => ({
   open: state.app.open,
   currentMovie: state.app.currentMovie
-});
-const mapDispatchToProps = dispatch => bindActionCreators({ closedAside }, dispatch);
+})
+const mapDispatchToProps = dispatch => bindActionCreators({ closedAside }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(AsideDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(AsideDetails)

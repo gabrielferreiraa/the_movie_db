@@ -1,12 +1,12 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import Genres from 'components/AsideDetails/Genres';
-import Descriptive from 'components/AsideDetails/Descriptive';
-import CloseButton from 'components/CloseButton';
-import { IMG_URL } from 'constants/configConstants';
+import React from 'react'
+import Genres from 'components/AsideDetails/Genres'
+import Descriptive from 'components/AsideDetails/Descriptive'
+import CloseButton from 'components/CloseButton'
+import { IMG_URL } from 'constants/configConstants'
 
-import style from './css/AsideDetails';
+import style from './css/AsideDetails'
 
 const ContentDetail = ({ currentMovie, closedAside, handleError }) => (
   <section className={style.content}>
@@ -30,6 +30,6 @@ const ContentDetail = ({ currentMovie, closedAside, handleError }) => (
       genres={currentMovie.genres}
     />
   </section>
-);
+)
 
-export default ContentDetail;
+export default ContentDetail

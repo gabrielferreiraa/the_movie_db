@@ -1,3 +1,3 @@
-'use strict';
+'use strict'
 
-module.exports = require('../webpack/storybook.config');
+module.exports = require('../webpack/storybook.config')

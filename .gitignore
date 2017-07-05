@@ -2,6 +2,7 @@
 nbproject
 .idea
 /node_modules
+/docs/*
 /coverage/*
 npm-debug.log
 yarn.lock

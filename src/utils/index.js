@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * Date and array index to return.
@@ -8,4 +8,4 @@
  * @param date
  * @param returnPart
  */
-export const splitDate = (date, returnPart) => date.split('-')[returnPart];
+export const splitDate = (date, returnPart) => date.split('-')[returnPart]

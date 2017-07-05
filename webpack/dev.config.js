@@ -1,13 +1,13 @@
-'use strict';
+'use strict'
 
-const webpack = require('webpack');
-const common = require('./common');
+const webpack = require('webpack')
+const common = require('./common')
 
-const HtmlPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+const HtmlPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
-process.noDeprecation = true;
+process.noDeprecation = true
 
 module.exports = {
   devtool: 'source-map',
@@ -37,11 +37,11 @@ module.exports = {
 
   module: {
     rules: [
-      common.semistandardPreLoader,
+      common.standardPreLoader,
       common.jsLoader,
       common.cssLoader
     ]
   },
 
   resolve: common.resolve
-};
+}

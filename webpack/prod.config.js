@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-const webpack = require('webpack');
-const common = require('./common');
+const webpack = require('webpack')
+const common = require('./common')
 
-const HtmlPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -29,11 +29,11 @@ module.exports = {
 
   module: {
     rules: [
-      common.semistandardPreLoader,
+      common.standardPreLoader,
       common.jsLoader,
       common.cssLoader
     ]
   },
 
   resolve: common.resolve
-};
+}

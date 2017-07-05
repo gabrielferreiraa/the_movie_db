@@ -1,13 +1,13 @@
-'use strict';
+'use strict'
 
-const { join } = require('path');
+const { join } = require('path')
 
 const paths = {
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
   docs: join(__dirname, '..', 'docs'),
   dist: join(__dirname, '..', 'src', 'dist')
-};
+}
 
 module.exports = {
   paths,
@@ -32,13 +32,12 @@ module.exports = {
     template: join(paths.src, 'template.html')
   },
 
-  semistandardPreLoader: {
+  standardPreLoader: {
     enforce: 'pre',
     test: /\.js$/,
-    exclude: /node_modules/,
     include: paths.src,
     use: {
-      loader: 'semistandard-loader',
+      loader: 'standard-loader',
       options: {
         parser: 'babel-eslint'
       }
@@ -101,4 +100,4 @@ module.exports = {
       css: join(paths.dist, 'css')
     }
   }
-};
+}

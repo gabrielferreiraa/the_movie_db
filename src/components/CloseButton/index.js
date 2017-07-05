@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-import React, { PropTypes } from 'react';
-import style from './css/closeButton';
+import React, { PropTypes } from 'react'
+import style from './css/closeButton'
 
 const CloseButton = ({ handleClick }) => (
   <button
@@ -9,10 +9,10 @@ const CloseButton = ({ handleClick }) => (
     onClick={handleClick}
     title='Close'
     className={style.closeButton} />
-);
+)
 
 CloseButton.propTypes = {
   handleClick: PropTypes.func.isRequired
-};
+}
 
-export default CloseButton;
+export default CloseButton

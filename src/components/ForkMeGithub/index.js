@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import style from './css/ForkMeGithub';
+import React from 'react'
+import style from './css/ForkMeGithub'
 
 const ForkMeGithub = () => (
   <a className={style.githubCorner} href='https://github.com/gabrielferreiraa/api_movie' title='Fork me on GitHub'
@@ -17,6 +17,6 @@ const ForkMeGithub = () => (
         fill='currentColor' />
     </svg>
   </a>
-);
+)
 
-export default ForkMeGithub;
+export default ForkMeGithub

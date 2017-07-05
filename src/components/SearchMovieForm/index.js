@@ -1,19 +1,19 @@
-'use strict';
+'use strict'
 
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import style from './css/SearchMovieForm';
+import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import style from './css/SearchMovieForm'
 
-import { nameChanged, movieSearched } from 'actions/SearchMovieFormActions';
+import { nameChanged, movieSearched } from 'actions/SearchMovieFormActions'
 
 class SearchMovieForm extends Component {
   constructor (props) {
-    super(props);
+    super(props)
   }
 
   componentWillMount () {
-    this.props.movieSearched();
+    this.props.movieSearched()
   }
 
   render () {
@@ -27,11 +27,11 @@ class SearchMovieForm extends Component {
           </button>
         </div>
       </div>
-    );
+    )
   }
 }
 
-const mapStateToProps = state => ({ name: state.app.name });
-const mapDispatchToProps = dispatch => bindActionCreators({ nameChanged, movieSearched }, dispatch);
+const mapStateToProps = state => ({ name: state.app.name })
+const mapDispatchToProps = dispatch => bindActionCreators({ nameChanged, movieSearched }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchMovieForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchMovieForm)

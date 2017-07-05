@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import style from './css/AsideDetails';
+import React from 'react'
+import style from './css/AsideDetails'
 
 const renderGenres = genres => (
   <div className={style.genres}>
@@ -9,8 +9,8 @@ const renderGenres = genres => (
       <span key={item.id}>{item.name}</span>
     )) : false}
   </div>
-);
+)
 
-const Genres = ({ genres }) => renderGenres(genres);
+const Genres = ({ genres }) => renderGenres(genres)
 
-export default Genres;
+export default Genres
