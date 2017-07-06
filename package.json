@@ -63,7 +63,7 @@
     "stylus-loader": "^3.0.1",
     "vanilla-masker": "^1.1.1"
   },
-  "semistandard": {
+  "standard": {
     "globals": [
       "alert"
     ]
